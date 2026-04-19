@@ -1,0 +1,3138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INTI SOMOS | Premium Exports</title>
+  <meta name="description" content="INTI SOMOS: premium  exports from Ecuador to the world." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory: #f8f4ec;
+      --ivory-2: #f2ebdf;
+      --navy: #0d2345;
+      --navy-2: #112d57;
+      --gold: #c89b5c;
+      --gold-soft: #dcc19a;
+      --gold-pale: rgba(200, 155, 92, 0.16);
+      --text: #243041;
+      --muted: rgba(36, 48, 65, 0.72);
+      --white: #ffffff;
+      --line: rgba(13, 35, 69, 0.12);
+      --shadow: 0 20px 60px rgba(13, 35, 69, 0.10);
+      --shadow-strong: 0 30px 80px rgba(13, 35, 69, 0.16);
+      --radius: 24px;
+      --radius-lg: 34px;
+      --max: 1260px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(200,155,92,0.08), transparent 28%),
+        linear-gradient(180deg, #fbf8f2 0%, var(--ivory) 46%, #f7f1e7 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    body.menu-open { overflow: hidden; }
+    img, video { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+
+    .container {
+      width: min(90%, var(--max));
+      margin: 0 auto;
+      padding-left: 60px;
+      padding-right: 40px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(248, 244, 236, 0.75);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(13, 35, 69, 0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 88px;
+      position: relative;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--navy);
+      font-size: 2.15rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: #8f5a44;
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 0.88rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--navy);
+      opacity: 0.9;
+      padding-bottom: 8px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), #e4c28e);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after { width: 100%; }
+
+    .nav-actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(13, 35, 69, 0.12);
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.88);
+      box-shadow: 0 8px 20px rgba(13, 35, 69, 0.08);
+      min-width: 108px;
+      height: 58px;
+    }
+
+    .lang-switch button {
+      border: 0;
+      background: transparent;
+      min-width: 54px;
+      height: 58px;
+      padding: 0 18px;
+      cursor: pointer;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .lang-switch button.active {
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      color: var(--white);
+    }
+
+    .nav-actions .btn.btn-primary {
+      min-height: 58px;
+      padding: 0 30px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      white-space: nowrap;
+      box-shadow: 0 14px 30px rgba(13, 35, 69, 0.16);
+    }
+
+    .cart-trigger {
+      position: relative;
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      border: 1px solid rgba(13, 35, 69, 0.12);
+      background: rgba(255,255,255,0.9);
+      color: var(--navy);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 26px rgba(13, 35, 69, 0.08);
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .cart-trigger:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(13, 35, 69, 0.14);
+      background: rgba(255,255,255,1);
+    }
+
+    .cart-trigger svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -5px;
+      right: -4px;
+      min-width: 22px;
+      height: 22px;
+      padding: 0 6px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d1b078, #c89b5c);
+      color: var(--navy);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(200,155,92,0.28);
+    }
+
+    .cart-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(440px, 100%);
+      height: 100vh;
+      background: #ffffff;
+      box-shadow: -18px 0 42px rgba(13,35,69,0.14);
+      z-index: 2100;
+      transform: translateX(100%);
+      transition: transform 0.35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-panel.open {
+      transform: translateX(0);
+    }
+
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 20, 40, 0.42);
+      backdrop-filter: blur(6px);
+      z-index: 2050;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .cart-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .cart-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 22px 18px;
+      border-bottom: 1px solid rgba(13,35,69,0.08);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    .cart-header h3 {
+      font-size: 1.55rem;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .cart-close {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(13,35,69,0.12);
+      background: rgba(255,255,255,0.82);
+      color: var(--navy);
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    .cart-body {
+      flex: 1;
+      overflow: auto;
+      padding: 14px 22px 22px;
+      display: grid;
+      gap: 12px;
+      align-content: start;
+      background: #fff;
+    }
+
+    .cart-empty {
+      padding: 26px 22px;
+      border-radius: 16px;
+      background: #f8f4ec;
+      border: 1px solid rgba(13,35,69,0.06);
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 84px 1fr auto;
+      gap: 14px;
+      align-items: start;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(13,35,69,0.08);
+      background: transparent;
+    }
+
+    .cart-item img {
+      width: 84px;
+      height: 96px;
+      object-fit: cover;
+      border-radius: 12px;
+      background: #f4ede2;
+    }
+
+    .cart-item h4 {
+      font-size: 1.05rem;
+      margin: 0 0 6px;
+      line-height: 1.1;
+    }
+
+    .cart-item p {
+      margin: 0;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .cart-item-meta {
+      display: grid;
+      gap: 10px;
+      padding-top: 4px;
+    }
+
+    .cart-item-price {
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+    }
+
+    .cart-item-actions {
+      display: grid;
+      gap: 10px;
+      justify-items: end;
+      padding-top: 4px;
+    }
+
+    .cart-mini-qty {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #f8f4ec;
+      border: 1px solid rgba(13,35,69,0.08);
+      font-size: 0.82rem;
+      color: var(--navy);
+      min-width: 96px;
+      justify-content: center;
+    }
+
+    .cart-mini-btn {
+      border: 0;
+      background: transparent;
+      color: var(--navy);
+      cursor: pointer;
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    .cart-remove {
+      border: 0;
+      background: transparent;
+      color: #8f5a44;
+      cursor: pointer;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0;
+    }
+
+    .cart-footer {
+      padding: 18px 22px 22px;
+      border-top: 1px solid rgba(13,35,69,0.08);
+      display: grid;
+      gap: 12px;
+      background: #fff;
+      position: sticky;
+      bottom: 0;
+    }
+
+    .cart-total {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--navy);
+    }
+
+    .cart-total strong {
+      font-size: 1.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1;
+    }
+
+    .cart-checkout {
+      width: 100%;
+      min-height: 54px;
+      border: 0;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      color: var(--white);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(13,35,69,0.16);
+    }
+
+    .cart-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.18) 40%, transparent 70%);
+      transform: translateX(-120%);
+      transition: transform 0.55s ease;
+    }
+
+    .btn:hover::before { transform: translateX(120%); }
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      border-color: var(--gold-soft);
+      color: var(--gold);
+      background: rgba(255,255,255,0.3);
+    }
+
+    .btn-secondary:hover {
+      background: var(--gold);
+      color: var(--white);
+      border-color: var(--gold);
+    }
+
+    .btn-ghost {
+      border-color: rgba(255,255,255,0.28);
+      color: var(--white);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn-ghost:hover {
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--white);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.76);
+      cursor: pointer;
+      color: var(--navy);
+      font-size: 1.15rem;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 110px 0 90px;
+      min-height: calc(100vh - 88px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(248,244,236,0.95) 0%, rgba(248,244,236,0.84) 48%, rgba(248,244,236,0.66) 100%),
+        url('images/hero-bg.jpg') center/cover no-repeat;
+      z-index: -2;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 78% 20%, rgba(200,155,92,0.12), transparent 22%),
+        radial-gradient(circle at 20% 78%, rgba(13,35,69,0.06), transparent 24%);
+      z-index: -1;
+    }
+
+    .hero-product-blur {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero-product-blur img {
+      position: absolute;
+      width: 220px;
+      filter: blur(12px);
+      opacity: 0.18;
+    }
+
+    .hero-product-blur img:nth-child(1) {
+      top: 10%;
+      right: 10%;
+    }
+
+    .hero-product-blur img:nth-child(2) {
+      bottom: 10%;
+      left: 5%;
+    }
+
+    .hero-product-blur img:nth-child(3) {
+      bottom: 5%;
+      right: 30%;
+    }
+
+    .hero-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      border: 1px solid var(--gold-soft);
+      color: var(--gold);
+      padding: 10px 18px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      margin-bottom: 24px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.42);
+      backdrop-filter: blur(8px);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--navy);
+      line-height: 0.95;
+      margin: 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(4.8rem, 9vw, 8.4rem);
+      margin-bottom: 10px;
+      letter-spacing: -0.04em;
+      text-wrap: balance;
+    }
+
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      color: #8f5a44;
+      font-size: clamp(2.4rem, 4vw, 3.55rem);
+      font-style: italic;
+      margin-bottom: 18px;
+      text-wrap: balance;
+    }
+
+    .hero-sub {
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 26px;
+      font-size: 0.9rem;
+      max-width: 620px;
+    }
+
+    .hero p {
+      max-width: 520px;
+      font-size: 1.05rem;
+      margin: 0 auto 24px;
+      color: rgba(36, 48, 65, 0.85);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 34px;
+    }
+
+    .mini-trust {
+      display: flex;
+      gap: 16px 18px;
+      flex-wrap: wrap;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 30px;
+      max-width: 700px;
+    }
+
+    .mini-trust span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mini-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 6px rgba(200,155,92,0.13);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid rgba(200,155,92,0.55);
+      background: rgba(255,255,255,0.66);
+      backdrop-filter: blur(12px);
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      max-width: 760px;
+    }
+
+    .stat {
+      padding: 28px 18px;
+      text-align: center;
+      border-right: 1px solid rgba(200,155,92,0.32);
+    }
+
+    .stat:last-child { border-right: 0; }
+    .stat strong {
+      display: block;
+      color: var(--gold);
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.76rem;
+      color: var(--navy);
+    }
+
+    .hero-card {
+      position: relative;
+      background: rgba(255,255,255,0.48);
+      border: 1px solid rgba(200, 155, 92, 0.28);
+      border-radius: 38px;
+      box-shadow: var(--shadow-strong);
+      overflow: hidden;
+      isolation: isolate;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(13,35,69,0) 42%, rgba(13,35,69,0.42) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 28px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-card video,
+    .hero-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 760px;
+    }
+
+    .hero-floating {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      z-index: 2;
+    }
+
+    .floating-panel {
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.54);
+      border-radius: 20px;
+      padding: 16px 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .floating-panel small {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gold);
+      margin-bottom: 8px;
+      font-size: 0.72rem;
+    }
+
+    .floating-panel strong {
+      color: var(--navy);
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    section {
+      padding: 112px 0;
+      position: relative;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+
+    .section-head p { max-width: 640px; margin: 0; color: var(--muted); }
+    .section-head h2 { font-size: clamp(3rem, 5vw, 5.2rem); letter-spacing: -0.02em; }
+
+    .split-grid,
+    .video-grid,
+    .contact-grid,
+    .footer-grid,
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(13,35,69,0.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(200,155,92,0.3), rgba(13,35,69,0.02), rgba(255,255,255,0.3));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .about-copy,
+    .contact-card,
+    .product-card,
+    .video-card,
+    .feature-card,
+    .story-card,
+    .highlight-card,
+    .cert-card,
+    .process-card {
+      padding: 34px;
+    }
+
+    .about-media,
+    .story-media,
+    .contact-media {
+      min-height: 100%;
+    }
+
+    .about-media img,
+    .story-media img,
+    .contact-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 540px;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+
+    .about-lead {
+      font-size: 1.18rem;
+      color: var(--navy);
+      max-width: 760px;
+      margin-bottom: 0;
+    }
+
+    .feature-row,
+    .highlights-grid,
+    .cert-grid,
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .feature-card h3,
+    .product-card h3,
+    .video-card h3,
+    .contact-card h3,
+    .story-card h3,
+    .highlight-card h3,
+    .process-card h3 {
+      font-size: 2.1rem;
+      margin-bottom: 12px;
+    }
+
+    .feature-card p,
+    .highlight-card p,
+    .process-card p,
+    .story-card p,
+    .contact-card p,
+    .product-card p,
+    .video-card p { color: var(--muted); }
+
+    .pill {
+      display: inline-flex;
+      border: 1px solid rgba(200,155,92,0.4);
+      color: var(--gold);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      width: fit-content;
+      background: transparent;
+      margin-bottom: 8px;
+    }
+
+    .story-grid {
+      align-items: stretch;
+    }
+
+    .story-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.62));
+    }
+
+    .story-quote {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--navy);
+      line-height: 1.05;
+    }
+
+    .products-wrap {
+      display: grid;
+      gap: 24px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+
+    .product-card {
+      grid-column: span 4;
+      max-width: none;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.68));
+      border: 1px solid rgba(13,35,69,0.08);
+      border-radius: 24px;
+      box-shadow: 0 18px 42px rgba(13,35,69,0.08);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .product-card:nth-child(3n+2) {
+      margin-top: 32px;
+    }
+
+    .product-card:nth-child(5),
+    .product-card:nth-child(7) {
+      grid-column: span 6;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 64px rgba(13,35,69,0.14);
+    }
+
+    .product-topline {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .product-price {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--navy);
+      font-size: 2rem;
+      line-height: 0.95;
+      white-space: nowrap;
+    }
+
+    .product-pack {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.68rem;
+    }
+
+    .product-cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .product-link-btn {
+      min-height: 56px;
+      padding: 0 22px;
+      border: 1px solid rgba(13,35,69,0.12);
+      background: rgba(255,255,255,0.72);
+      color: var(--navy);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.74rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .product-link-btn:hover {
+      transform: translateY(-2px);
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+
+    .product-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      background: rgba(8, 20, 40, 0.72);
+      backdrop-filter: blur(10px);
+      z-index: 2000;
+    }
+
+    .product-modal.open {
+      display: flex;
+    }
+
+    .product-modal-panel {
+      width: min(1120px, 100%);
+      max-height: 90vh;
+      overflow: auto;
+      background: linear-gradient(180deg, #fbf7f0, #f4ede2);
+      border-radius: 28px;
+      box-shadow: var(--shadow-strong);
+      position: relative;
+      padding: 26px;
+    }
+
+    .product-modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(13,35,69,0.12);
+      background: rgba(255,255,255,0.86);
+      color: var(--navy);
+      cursor: pointer;
+      font-size: 1.2rem;
+      z-index: 2;
+    }
+
+    .product-modal-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .product-modal-media {
+      border-radius: 22px;
+      overflow: hidden;
+      min-height: 100%;
+      background: rgba(13,35,69,0.06);
+    }
+
+    .product-modal-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 680px;
+      object-fit: cover;
+    }
+
+    .modal-brandline {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.76rem;
+      margin-bottom: 12px;
+    }
+
+    .modal-title {
+      font-size: clamp(3rem, 5vw, 4.8rem);
+      margin-bottom: 10px;
+    }
+
+    .modal-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      color: #8f5a44;
+      font-size: 1.8rem;
+      font-style: italic;
+      margin-bottom: 18px;
+    }
+
+    .modal-copy {
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 18px;
+    }
+
+    .modal-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .modal-badge {
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 14px;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .modal-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-bottom: 18px;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .metric {
+      background: var(--navy);
+      color: var(--white);
+      padding: 20px 16px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .metric:last-child { border-right: 0; }
+    .metric strong {
+      display: block;
+      font-size: 2rem;
+      color: #f1d298;
+      margin-bottom: 4px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .metric span {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.66rem;
+    }
+
+    .modal-techsheet {
+      background: #ebe3d1;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+
+    .modal-techsheet h4 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      margin-bottom: 14px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .tech-row {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 14px;
+      padding: 11px 0;
+      border-top: 1px solid rgba(13,35,69,0.08);
+    }
+
+    .tech-row:first-of-type { border-top: 0; }
+
+    .tech-row strong {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .modal-benefits {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .benefit {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+      align-items: start;
+      background: rgba(255,255,255,0.74);
+      border-left: 4px solid #7f2536;
+      padding: 14px 16px;
+    }
+
+    .benefit-mark {
+      width: 18px;
+      height: 18px;
+      background: #7f2536;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 0.72rem;
+      margin-top: 2px;
+    }
+
+    .modal-flavors {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .flavor {
+      border: 1px solid rgba(13,35,69,0.12);
+      background: rgba(255,255,255,0.76);
+      padding: 12px 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.72rem;
+      color: var(--navy);
+    }
+
+    .modal-footer-meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .footer-meta-item {
+      background: var(--navy);
+      color: var(--white);
+      padding: 18px 14px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .footer-meta-item:last-child { border-right: 0; }
+
+    .footer-meta-item small {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 6px;
+    }
+
+    .footer-meta-item strong {
+      color: #f1d298;
+      font-size: 1rem;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .product-media {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      aspect-ratio: 0.88;
+      background: linear-gradient(180deg, rgba(13,35,69,0.04), rgba(13,35,69,0.12));
+    }
+
+    .product-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(13,35,69,0) 54%, rgba(13,35,69,0.22) 100%);
+    }
+
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s ease;
+    }
+
+    .product-card:hover .product-media img { transform: scale(1.06); }
+
+    .product-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: rgba(36,48,65,0.66);
+      font-size: 0.74rem;
+    }
+
+    .product-meta span {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(13,35,69,0.04);
+      border: 1px solid rgba(13,35,69,0.08);
+    }
+
+    .product-actions {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px;
+  align-items: stretch;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.qty-control {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  align-items: center;
+  min-height: 56px;
+  border: 1px solid rgba(13,35,69,0.12);
+  background: rgba(255,255,255,0.9);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 4px rgba(13,35,69,0.06);
+}
+
+.qty-btn {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--navy);
+  transition: all 0.2s ease;
+}
+
+.qty-btn:hover {
+  background: rgba(200,155,92,0.15);
+}
+
+.qty-value {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-left: 1px solid rgba(13,35,69,0.1);
+  border-right: 1px solid rgba(13,35,69,0.1);
+  transition: transform 0.22s ease, color 0.22s ease, background 0.22s ease;
+}
+
+.qty-value.is-changing {
+  transform: scale(1.12);
+  color: var(--gold);
+  background: rgba(200,155,92,0.08);
+}
+
+@keyframes qtyPulse {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+.add-cart-btn {
+  min-height: 56px;
+  border: 0;
+  background: linear-gradient(135deg, #d1b078, #c89b5c);
+  color: var(--navy);
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 12px 28px rgba(200,155,92,0.22);
+}
+
+.add-cart-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(200,155,92,0.3);
+}
+
+.add-cart-btn:active {
+  transform: scale(0.98);
+}
+
+.bag-icon {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+
+    .qty-control {
+      display: grid;
+      grid-template-columns: 34px 1fr 34px;
+      align-items: center;
+      min-height: 48px;
+      border: 1px solid rgba(13,35,69,0.14);
+      background: rgba(255,255,255,0.82);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .qty-btn,
+    .qty-value {
+      display: grid;
+      place-items: center;
+      height: 100%;
+      color: var(--navy);
+      font-size: 1.05rem;
+    }
+
+    .qty-btn {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .qty-btn:hover {
+      background: rgba(13,35,69,0.06);
+    }
+
+    .qty-value {
+      border-left: 1px solid rgba(13,35,69,0.12);
+      border-right: 1px solid rgba(13,35,69,0.12);
+      font-weight: 500;
+    }
+
+    .add-cart-btn {
+      min-height: 48px;
+      border: 0;
+      background: linear-gradient(135deg, #d1b078, #c89b5c);
+      color: var(--navy);
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 700;
+      font-size: 0.7rem;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+      box-shadow: 0 14px 30px rgba(200,155,92,0.18);
+    }
+
+    .add-cart-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(0.98);
+    }
+
+    .bag-icon {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .collection-banner {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(13,35,69,0.98), rgba(20,49,91,0.94));
+      color: var(--white);
+      padding: 34px;
+      border-radius: 30px;
+      box-shadow: var(--shadow-strong);
+    }
+
+    .collection-banner h3 {
+      color: var(--white);
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 10px;
+    }
+
+    .collection-banner p { color: rgba(255,255,255,0.78); margin: 0; }
+
+    .video-grid,
+    .contact-grid { align-items: stretch; }
+
+    .video-card {
+      overflow: hidden;
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .video-wrap {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      aspect-ratio: 16 / 10;
+      background: #000;
+    }
+
+    .video-wrap video,
+    .video-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      object-fit: cover;
+    }
+
+    .video-length {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      background: rgba(13,35,69,0.74);
+      color: var(--white);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      z-index: 2;
+    }
+
+    .cert-grid {
+      margin-top: 28px;
+    }
+
+    .cert-card {
+      text-align: center;
+      background: rgba(255,255,255,0.62);
+    }
+
+    .cert-icon {
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 18px;
+      background: linear-gradient(135deg, rgba(200,155,92,0.18), rgba(200,155,92,0.06));
+      border: 1px solid rgba(200,155,92,0.24);
+      color: var(--gold);
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .contact-card form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field {
+      width: 100%;
+      border: 1px solid rgba(13,35,69,0.08);
+      background: rgba(255,255,255,0.84);
+      padding: 16px 18px;
+      border-radius: 16px;
+      color: var(--text);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .field:focus {
+      outline: none;
+      border-color: rgba(200,155,92,0.58);
+      box-shadow: 0 0 0 4px rgba(200,155,92,0.12);
+    }
+
+    textarea.field {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-list li {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(13,35,69,0.04);
+      border: 1px solid rgba(13,35,69,0.05);
+    }
+
+    .contact-list small {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin-bottom: 6px;
+      font-size: 0.72rem;
+    }
+
+    .cta-band {
+      background: linear-gradient(135deg, rgba(13,35,69,1), rgba(23,55,104,0.98));
+      color: var(--white);
+      padding: 44px;
+      border-radius: var(--radius-lg);
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      box-shadow: var(--shadow-strong);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(200,155,92,0.22), transparent 26%);
+      pointer-events: none;
+    }
+
+    .cta-band h3 {
+      color: var(--white);
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .cta-band p {
+      position: relative;
+      color: rgba(255,255,255,0.8);
+      max-width: 760px;
+      margin: 0;
+    }
+
+    footer {
+      padding: 34px 0 54px;
+      border-top: 1px solid rgba(13,35,69,0.08);
+    }
+
+    .footer-grid {
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.92rem;
+      color: var(--muted);
+      justify-content: flex-end;
+      margin-bottom: 10px;
+    }
+
+    .footer-note {
+      text-align: right;
+      color: rgba(36, 48, 65, 0.72);
+      font-size: 0.92rem;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 18px 40px rgba(13, 35, 69, 0.24);
+      z-index: 1000;
+      font-size: 1.35rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .floating-whatsapp:hover { transform: translateY(-2px); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1160px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        max-width: 860px;
+        padding: 0;
+      }
+
+      .hero-card {
+        max-width: 720px;
+      }
+
+      .hero-content {
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      .hero p,
+      .hero-sub,
+      .mini-trust,
+      .stats {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+      .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .product-card,
+      .product-card:nth-child(5),
+      .product-card:nth-child(7) {
+        grid-column: auto;
+      }
+
+      .product-card:nth-child(3n+2) {
+        margin-top: 0;
+      }
+
+      .product-modal-grid,
+      .modal-metrics,
+      .modal-footer-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .product-modal-media img {
+        min-height: 420px;
+      }
+
+      .hero-grid,
+      .split-grid,
+      .video-grid,
+      .contact-grid,
+      .footer-grid,
+      .story-grid,
+      .collection-banner,
+      .feature-row,
+      .highlights-grid,
+      .cert-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card video,
+      .hero-card img { min-height: 500px; }
+
+      .hero-floating {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .menu-toggle { display: inline-grid; place-items: center; }
+      .nav-links,
+      .nav-actions .lang-switch,
+      .nav-actions > a { display: none; }
+
+      .nav.open .nav-links {
+        display: flex;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 88px;
+        background: rgba(248,244,236,0.98);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        box-shadow: var(--shadow-strong);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+        gap: 18px;
+      }
+
+      .nav.open .nav-actions {
+        display: flex;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc(88px + 292px);
+        justify-content: flex-start;
+        background: rgba(248,244,236,0.98);
+        border: 1px solid var(--line);
+        border-top: 0;
+        border-radius: 0 0 24px 24px;
+        box-shadow: var(--shadow-strong);
+        padding: 0 24px 24px;
+      }
+
+      .nav.open .nav-actions .lang-switch,
+      .nav.open .nav-actions > a {
+        display: inline-flex;
+      }
+
+      .hero { min-height: auto; padding: 64px 0 62px; }
+      .hero-grid { gap: 28px; }
+      .section-head { flex-direction: column; align-items: start; }
+    }
+
+    @media (max-width: 640px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-card,
+      .product-card:nth-child(5),
+      .product-card:nth-child(7) {
+        grid-column: auto;
+      }
+
+      .product-topline,
+      .product-cta-row,
+      .modal-flavors {
+        flex-direction: column;
+      }
+
+      .tech-row {
+        grid-template-columns: 1fr;
+      }
+
+      section { padding: 86px 0; }
+
+      .hero h1 { font-size: clamp(3.8rem, 18vw, 5.4rem); }
+      .hero-tagline { font-size: clamp(2rem, 8vw, 2.8rem); }
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; }
+
+      .stats { grid-template-columns: 1fr; }
+      .stat { border-right: 0; border-bottom: 1px solid var(--gold-soft); }
+      .stat:last-child { border-bottom: 0; }
+
+      .cta-band { padding: 28px; flex-direction: column; align-items: start; }
+
+      .hero-card video,
+      .hero-card img,
+      .about-media img,
+      .story-media img,
+      .contact-media img { min-height: 360px; }
+
+      .floating-whatsapp { right: 16px; bottom: 16px; }
+      .hero-floating { left: 18px; right: 18px; bottom: 18px; }
+      .product-actions { grid-template-columns: 1fr; }
+
+      .nav-actions {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 12px;
+      }
+
+      .lang-switch {
+        min-width: 96px;
+        height: 52px;
+        flex: 0 0 auto;
+      }
+
+      .lang-switch button {
+        min-width: 48px;
+        height: 52px;
+        padding: 0 14px;
+        font-size: 0.95rem;
+      }
+
+      .nav-actions .btn.btn-primary {
+        min-height: 52px;
+        padding: 0 22px;
+        font-size: 0.84rem;
+        letter-spacing: 0.06em;
+        width: auto;
+        flex: 1 1 auto;
+      }
+    }
+
+      .product-card,
+      .product-card:nth-child(5),
+      .product-card:nth-child(7) {
+        grid-column: auto;
+      }
+
+      .product-topline,
+      .product-cta-row,
+      .modal-flavors {
+        flex-direction: column;
+      }
+
+      .tech-row {
+        grid-template-columns: 1fr;
+      }
+
+      section { padding: 86px 0; }
+      .hero h1 { font-size: clamp(3.8rem, 18vw, 5.4rem); }
+      .hero-tagline { font-size: clamp(2rem, 8vw, 2.8rem); }
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; }
+      .stats { grid-template-columns: 1fr; }
+      .stat { border-right: 0; border-bottom: 1px solid var(--gold-soft); }
+      .stat:last-child { border-bottom: 0; }
+      .cta-band { padding: 28px; flex-direction: column; align-items: start; }
+      .hero-card video,
+      .hero-card img,
+      .about-media img,
+      .story-media img,
+      .contact-media img { min-height: 360px; }
+      .floating-whatsapp { right: 16px; bottom: 16px; }
+      .hero-floating { left: 18px; right: 18px; bottom: 18px; }
+      .product-actions { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <nav class="nav" id="nav">
+        <a href="#inicio" class="brand">
+  <img src="images/logo-inti-somos.png" alt="INTI SOMOS" style="height:42px;">
+</a>
+        <div class="nav-links">
+          <a href="#inicio" class="active">Inicio</a>
+          <a href="#productos">Productos</a>
+          <a href="#videos">Videos</a>
+          <a href="#certificaciones">Calidad</a>
+          <a href="#manifiesto">Manifiesto</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <div class="nav-actions">
+          <div class="lang-switch">
+            <button class="active" type="button" data-lang="es">ES</button>
+            <button type="button" data-lang="en">EN</button>
+          </div>
+          <button class="cart-trigger" id="cartTrigger" type="button" aria-label="Abrir carrito">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 10V7a4 4 0 1 1 8 0v3" />
+              <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
+              <path d="M10 13h4" />
+            </svg>
+            <span class="cart-badge" id="cartBadge">0</span>
+          </button>
+          <a class="btn btn-primary" href="#contacto">Solicitar información</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-product-blur">
+        <img src="images/product-cereal.jpg">
+        <img src="images/product-fruit.jpg">
+        <img src="images/product-chochos.jpg">
+      </div>
+      <div class="container hero-grid">
+        <div class="reveal hero-content">
+          <div class="eyebrow">Exports · Ecuador</div>
+          <h1>INTI SOMOS</h1>
+          <div class="hero-tagline">de la tierra al mundo</div>
+          
+          <p>Origen andino. Presencia premium.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#productos">Explorar portafolio</a>
+            <a class="btn btn-secondary" href="#videos">Ver experiencia visual</a>
+          </div>
+          
+          
+            <div class="stat"><strong>EEUU</strong><span>Mercado</span></div>
+            <div class="stat"><strong>EC</strong><span>Origen</span></div>
+          </div>
+        </div>
+
+        
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section id="productos">
+      <div class="container products-wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Portafolio</div>
+            <h2>Productos con una presentación más premium</h2>
+          </div>
+          <p>
+            Esta sección ya no solo lista productos: los presenta como una colección exportable, con estética más cuidada y lectura más elegante.
+          </p>
+        </div>
+
+        <div class="collection-banner reveal">
+          <div>
+            <div class="pill" style="background:rgba(255,255,255,0.1);color:#f0cf9a;border-color:rgba(240,207,154,0.24);">Collection spotlight</div>
+            <h3>Andean nutrition designed for modern global markets</h3>
+            <p>Una colección pensada para retail, wellness, convenience foods y categorías funcionales con alto potencial internacional.</p>
+          </div>
+          <div style="display:flex;justify-content:flex-end;">
+            <a class="btn btn-ghost" href="#contacto">Solicitar portafolio completo</a>
+          </div>
+        </div>
+
+        <div class="products-grid">
+          <article class="card product-card reveal" data-product-name="Freeze Dried Chochos" data-product-price="8.90" data-product-pack="SNACK BAG · 80G" data-product-image="images/product-chochos.jpg">
+            <div class="product-media"><img src="images/product-chochos.jpg" alt="Freeze dried chochos"></div>
+            <div class="pill">Plant-based protein</div>
+            <div class="product-topline">
+              <div>
+                <h3>Freeze Dried Chochos</h3>
+                <span class="product-pack">SNACK BAG · 80G</span>
+              </div>
+              <div class="product-price">USD $8.90</div>
+            </div>
+            <p>Proteína andina práctica, moderna y de gran valor nutricional para consumidores y compradores que valoran funcionalidad y origen.</p>
+            <div class="product-meta">
+              <span>High protein</span>
+              <span>Andean origin</span>
+              <span>Export ready</span>
+            </div>
+            <div class="product-actions">
+              <div class="qty-control">
+                <button class="qty-btn" type="button" aria-label="Disminuir cantidad">−</button>
+                <span class="qty-value">1</span>
+                <button class="qty-btn" type="button" aria-label="Aumentar cantidad">+</button>
+              </div>
+              <button class="add-cart-btn" type="button">
+                <svg class="bag-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 10V7a4 4 0 1 1 8 0v3" />
+                  <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
+                  <path d="M10 13h4" />
+                </svg>
+                <span>ADD</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="card product-card reveal" data-product-name="Freeze Dried Fruits" data-product-price="6.50" data-product-pack="VARIETY PACK · 20G" data-product-image="images/product-fruit.jpg">
+            <div class="product-media"><img src="images/product-fruit.jpg" alt="Freeze dried fruit"></div>
+            <div class="pill">Natural fruit</div>
+            <div class="product-topline">
+              <div>
+                <h3>Freeze Dried Fruits</h3>
+                <span class="product-pack">VARIETY PACK · 20G</span>
+              </div>
+              <div class="product-price">USD $6.50</div>
+            </div>
+            <p>Color, sabor y larga vida útil en una categoría versátil para retail premium, snacks funcionales y propuestas de wellness.</p>
+            <div class="product-meta">
+              <span>Natural sweetness</span>
+              <span>Long shelf life</span>
+              <span>Premium retail</span>
+            </div>
+            <div class="product-actions">
+              <div class="qty-control">
+                <button class="qty-btn" type="button" aria-label="Disminuir cantidad">−</button>
+                <span class="qty-value">1</span>
+                <button class="qty-btn" type="button" aria-label="Aumentar cantidad">+</button>
+              </div>
+              <button class="add-cart-btn" type="button">
+                <svg class="bag-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 10V7a4 4 0 1 1 8 0v3" />
+                  <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
+                  <path d="M10 13h4" />
+                </svg>
+                <span>ADD</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="card product-card reveal" data-product="quinoa-cereal" data-product-name="Quinoa Cereal" data-product-price="11.00" data-product-pack="BOX · 255G" data-product-image="images/product-cereal.jpg">
+            <div class="product-media"><img src="images/product-cereal.jpg" alt="Quinoa cereal"></div>
+            <div class="pill">Andean cereals</div>
+            <div class="product-topline">
+              <div>
+                <h3>Quinoa Cereal</h3>
+                <span class="product-pack">BOX · 255G</span>
+              </div>
+              <div class="product-price">USD $11.00</div>
+            </div>
+            <p>Formato ligero y crunchy con una imagen más contemporánea para consumidores que buscan nutrición, conveniencia y sabor.</p>
+            <div class="product-meta">
+              <span>Light texture</span>
+              <span>Functional food</span>
+              <span>Modern format</span>
+            </div>
+            <div class="product-actions">
+              <div class="qty-control">
+                <button class="qty-btn" type="button" aria-label="Disminuir cantidad">−</button>
+                <span class="qty-value">1</span>
+                <button class="qty-btn" type="button" aria-label="Aumentar cantidad">+</button>
+              </div>
+              <button class="add-cart-btn" type="button">
+                <svg class="bag-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 10V7a4 4 0 1 1 8 0v3" />
+                  <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
+                  <path d="M10 13h4" />
+                </svg>
+                <span>ADD</span>
+              </button>
+            </div>
+            <div class="product-cta-row">
+              <button class="product-link-btn" type="button" data-open-product="quinoa-cereal">Ver detalle</button>
+            </div>
+          </article>
+
+          <article class="card product-card reveal" data-product-name="Chocolate Covered Chochos" data-product-price="9.80" data-product-pack="POUCH · 120G" data-product-image="images/product-choco-chochos.jpg">
+            <div class="product-media"><img src="images/product-choco-chochos.jpg" alt="Chocolate covered chochos"></div>
+            <div class="pill">Premium snack</div>
+            <div class="product-topline">
+              <div>
+                <h3>Chocolate Covered Chochos</h3>
+                <span class="product-pack">POUCH · 120G</span>
+              </div>
+              <div class="product-price">USD $9.80</div>
+            </div>
+            <p>Freeze-dried chochos coated in chocolate, a refined expression of ancestral ingredients brought together in one distinctive snack.</p>
+            <div class="product-meta">
+              <span>Chocho base</span>
+              <span>Chocolate coating</span>
+              <span>Ready to eat</span>
+            </div>
+            <div class="product-actions">
+              <div class="qty-control">
+                <button class="qty-btn" type="button" aria-label="Disminuir cantidad">−</button>
+                <span class="qty-value">1</span>
+                <button class="qty-btn" type="button" aria-label="Aumentar cantidad">+</button>
+              </div>
+              <button class="add-cart-btn" type="button">
+                <svg class="bag-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 10V7a4 4 0 1 1 8 0v3" />
+                  <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
+                  <path d="M10 13h4" />
+                </svg>
+                <span>ADD</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="card product-card reveal" data-product-name="Chocho Snack with Chili" data-product-price="7.20" data-product-pack="JAR · 250G" data-product-image="images/product-chili-chochos.jpg">
+            <div class="product-media"><img src="images/product-chili-chochos.jpg" alt="Chocho snack with chili"></div>
+            <div class="pill">Gourmet ready to eat</div>
+            <div class="product-topline">
+              <div>
+                <h3>Chocho Snack with Chili</h3>
+                <span class="product-pack">JAR · 250G</span>
+              </div>
+              <div class="product-price">USD $7.20</div>
+            </div>
+            <p>Traditional product reinterpreted for modern consumption, preserving authentic flavors with a gourmet finish for retail and food service.</p>
+            <div class="product-meta">
+              <span>Gourmet snack</span>
+              <span>Spicy flavor</span>
+              <span>250g / 530g</span>
+            </div>
+            <div class="product-actions">
+              <div class="qty-control">
+                <button class="qty-btn" type="button" aria-label="Disminuir cantidad">−</button>
+                <span class="qty-value">1</span>
+                <button class="qty-btn" type="button" aria-label="Aumentar cantidad">+</button>
+              </div>
+              <button class="add-cart-btn" type="button">
+                <svg class="bag-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 10V7a4 4 0 1 1 8 0v3" />
+                  <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
+                  <path d="M10 13h4" />
+                </svg>
+                <span>ADD</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="card product-card reveal" data-product-name="Pancake Mix" data-product-price="8.40" data-product-pack="BAG · 400G" data-product-image="images/product-pancake.jpg">
+            <div class="product-media"><img src="images/product-pancake.jpg" alt="Pancake mix"></div>
+            <div class="pill">Breakfast mix</div>
+            <div class="product-topline">
+              <div>
+                <h3>Pancake Mix</h3>
+                <span class="product-pack">BAG · 400G</span>
+              </div>
+              <div class="product-price">USD $8.40</div>
+            </div>
+            <p>A ready-to-prepare breakfast mix with quinoa, chocho and chocolate chips, ideal for families, food service and premium breakfasts.</p>
+            <div class="product-meta">
+              <span>Quinoa based</span>
+              <span>Chocolate chips</span>
+              <span>Ready to prepare</span>
+            </div>
+            <div class="product-actions">
+              <div class="qty-control">
+                <button class="qty-btn" type="button" aria-label="Disminuir cantidad">−</button>
+                <span class="qty-value">1</span>
+                <button class="qty-btn" type="button" aria-label="Aumentar cantidad">+</button>
+              </div>
+              <button class="add-cart-btn" type="button">
+                <svg class="bag-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 10V7a4 4 0 1 1 8 0v3" />
+                  <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
+                  <path d="M10 13h4" />
+                </svg>
+                <span>ADD</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="card product-card reveal" data-product-name="Chocho Puffs" data-product-price="7.50" data-product-pack="BAG · 60G" data-product-image="images/product-chocho-puffs.jpg">
+            <div class="product-media"><img src="images/product-chocho-puffs.jpg" alt="Chocho puffs"></div>
+            <div class="pill">High protein snack</div>
+            <div class="product-topline">
+              <div>
+                <h3>Chocho Puffs</h3>
+                <span class="product-pack">BAG · 60G</span>
+              </div>
+              <div class="product-price">USD $7.50</div>
+            </div>
+            <p>The crunch of a classic snack powered by Andean chocho, with 8g of plant-based protein, zero cholesterol and a light airy texture.</p>
+            <div class="product-meta">
+              <span>8g protein</span>
+              <span>Gluten free</span>
+              <span>Non GMO</span>
+            </div>
+            <div class="product-actions">
+              <div class="qty-control">
+                <button class="qty-btn" type="button" aria-label="Disminuir cantidad">−</button>
+                <span class="qty-value">1</span>
+                <button class="qty-btn" type="button" aria-label="Aumentar cantidad">+</button>
+              </div>
+              <button class="add-cart-btn" type="button">
+                <svg class="bag-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 10V7a4 4 0 1 1 8 0v3" />
+                  <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
+                  <path d="M10 13h4" />
+                </svg>
+                <span>ADD</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="videos">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Experiencia visual</div>
+            <h2>Video como argumento de marca</h2>
+          </div>
+          <p>
+            En una landing premium, el video no es un adorno: es una herramienta para comunicar origen, textura, proceso y percepción de valor de forma inmediata.
+          </p>
+        </div>
+
+        <div class="video-grid">
+          <article class="card video-card reveal">
+            <div class="video-wrap">
+              <video controls poster="images/video-poster-1.jpg">
+                <source src="videos/product-story.mp4" type="video/mp4">
+              </video>
+              <div class="video-length">01:24</div>
+            </div>
+            <div class="pill">Brand film</div>
+            <h3>El origen de INTI SOMOS</h3>
+            <p>Muestra territorio, ingredientes, herencia y propuesta exportadora con una narrativa audiovisual que eleve la credibilidad de la marca.</p>
+          </article>
+
+          <article class="card video-card reveal">
+            <div class="video-wrap">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video de producto" allowfullscreen></iframe>
+              <div class="video-length">YouTube</div>
+            </div>
+            <div class="pill">Product showcase</div>
+            <h3>Presentación de producto</h3>
+            <p>También puedes incrustar contenido desde YouTube o Vimeo para mantener el sitio más liviano y más fácil de actualizar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificaciones">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Calidad y confianza</div>
+            <h2>Señales visuales de seriedad comercial</h2>
+          </div>
+          <p>
+            Aquí puedes mostrar certificaciones, claims o estándares clave. Aunque aún no pongas logos definitivos, la estructura ya deja lista esa capa de confianza.
+          </p>
+        </div>
+
+        <div class="cert-grid">
+          <article class="card cert-card reveal">
+            <div class="cert-icon">01</div>
+            <h3>Trazabilidad</h3>
+            <p>Comunica control de origen, cadena de valor clara y lectura profesional para compradores.</p>
+          </article>
+          <article class="card cert-card reveal">
+            <div class="cert-icon">02</div>
+            <h3>Calidad premium</h3>
+            <p>Espacio ideal para certificaciones, estándares alimentarios o atributos comerciales relevantes.</p>
+          </article>
+          <article class="card cert-card reveal">
+            <div class="cert-icon">03</div>
+            <h3>Origen ecuatoriano</h3>
+            <p>Refuerza diferenciación territorial con una presencia visual más sólida y más elegante.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="manifiesto">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Manifiesto de marca</div>
+            <h2>La fuerza de un origen bien contado</h2>
+          </div>
+          <p>
+            Esta sección reemplaza una presentación convencional por una narrativa de marca más aspiracional, más refinada y más adecuada para posicionar a INTI SOMOS en mercados internacionales.
+          </p>
+        </div>
+
+        <div class="story-grid">
+          <div class="card story-card reveal">
+            <div>
+              <div class="pill">Brand essence</div>
+              <h3>Una historia entre herencia, nutrición y visión global</h3>
+              <p>
+                INTI SOMOS nace del encuentro entre raíces ecuatorianas, ingredientes nobles y una mirada contemporánea sobre el bienestar. La marca no solo exporta productos: exporta una forma de entender la nutrición desde el origen, la pureza y el respeto por la tierra.
+              </p>
+              <p>
+                La versión 4 eleva el tono visual con mejor jerarquía, contenido bilingüe real y rutas de contacto listas para generar leads.
+              </p>
+            </div>
+            <div class="story-quote">“La nutrición andina se convierte en una propuesta premium lista para dialogar con el mundo.”</div>
+          </div>
+
+          <div class="story-media reveal">
+            <img src="images/about-brand.jpg" alt="Historia y origen de INTI SOMOS" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-band reveal">
+          <div>
+            <div class="eyebrow" style="color:#f5d7a7;border-color:rgba(245,215,167,0.35);margin-bottom:14px;background:rgba(255,255,255,0.06);">Export ready</div>
+            <h3>Una web premium no solo se ve mejor. Convierte mejor.</h3>
+            <p>La versión 2 está pensada para que INTI SOMOS proyecte una imagen de mayor nivel frente a clientes, distribuidores, brokers y aliados internacionales.</p>
+          </div>
+          <a class="btn btn-ghost" href="#contacto">Hablemos</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Contacto</div>
+            <h2>Conecta con potenciales compradores</h2>
+          </div>
+          <p>
+            Esta última sección queda lista para convertir visitas en conversaciones reales por WhatsApp, correo o formularios de interés comercial.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card contact-card reveal">
+            <h3>Solicita información</h3>
+            <p>Usa este formulario como primer filtro comercial o conéctalo después a Formspree, Netlify Forms o WhatsApp.</p>
+            <form id="leadForm" action="https://formspree.io/f/TU_ENDPOINT" method="POST">
+              <input class="field" type="text" name="name" placeholder="Nombre" required />
+              <input class="field" type="email" name="email" placeholder="Correo electrónico" required />
+              <input class="field" type="text" name="company" placeholder="Empresa" />
+              <textarea class="field" name="message" placeholder="Cuéntanos qué producto te interesa" required></textarea>
+              <button class="btn btn-primary" type="submit">Enviar solicitud</button>
+              <div id="formStatus" style="font-size:0.95rem;color:var(--muted);padding-top:6px;"></div>
+            </form>
+          </div>
+
+          <div class="card contact-card reveal">
+            <h3>Canales directos</h3>
+            <p>Refuerza confianza con rutas claras de contacto y un tono más institucional.</p>
+            <ul class="contact-list">
+              <li>
+                <small>WhatsApp</small>
+                <strong><a href="https://wa.me/593000000000" data-whatsapp-link target="_blank">+593 000 000 000</a></strong>
+              </li>
+              <li>
+                <small>Email</small>
+                <strong><a href="mailto:hello@intisomos.com">hello@intisomos.com</a></strong>
+              </li>
+              <li>
+                <small>Ubicación</small>
+                <strong>Ecuador</strong>
+              </li>
+              <li>
+                <small>Horario</small>
+                <strong>Lunes a Viernes · 09:00 - 18:00</strong>
+              </li>
+            </ul>
+            <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;">
+              <a class="btn btn-primary" href="https://wa.me/593000000000" data-whatsapp-link target="_blank">WhatsApp</a>
+              <a class="btn btn-secondary" href="mailto:hello@intisomos.com">Email</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      <div class="product-modal" id="productModal" aria-hidden="true">
+      <div class="product-modal-panel">
+        <button class="product-modal-close" type="button" id="closeProductModal" aria-label="Cerrar">✕</button>
+        <div class="product-modal-grid">
+          <div class="product-modal-media">
+            <img src="images/product-cereal.jpg" alt="Quinoa Cereal" id="modalImage" />
+          </div>
+          <div>
+            <div class="modal-brandline">Andean supergrain snack</div>
+            <h2 class="modal-title">Quinoa Cereal</h2>
+            <div class="modal-subtitle">Light · Crunchy · Functional</div>
+            <p class="modal-copy">A modern cereal alternative made with quinoa, a traditional Andean grain. Quinoa Cereal offers a light and crunchy texture designed for today’s consumer seeking a balance between convenience and taste. Available in two delicious flavors.</p>
+            <div class="modal-badges">
+              <div class="modal-badge">High protein</div>
+              <div class="modal-badge">Andean grain</div>
+              <div class="modal-badge">Light & crunchy</div>
+              <div class="modal-badge">Ready to eat</div>
+            </div>
+            <div class="modal-metrics">
+              <div class="metric"><strong>130</strong><span>Kcal</span></div>
+              <div class="metric"><strong>4g</strong><span>Protein</span></div>
+              <div class="metric"><strong>2.5g</strong><span>Fiber</span></div>
+              <div class="metric"><strong>0mg</strong><span>Cholesterol</span></div>
+            </div>
+            <div class="modal-techsheet">
+              <h4>Technical sheet</h4>
+              <div class="tech-row"><strong>Presentation</strong><div>30g (individual snack) / 255g (cereal box)</div></div>
+              <div class="tech-row"><strong>Shelf life</strong><div>12 months</div></div>
+              <div class="tech-row"><strong>Origin</strong><div>Ecuador</div></div>
+            </div>
+            <div class="modal-benefits">
+              <div class="benefit"><div class="benefit-mark">✓</div><div>Premium Andean grain naturally rich in protein.</div></div>
+              <div class="benefit"><div class="benefit-mark">✓</div><div>Light and crunchy format ideal for cereals, snacks, and blends.</div></div>
+              <div class="benefit"><div class="benefit-mark">✓</div><div>Versatile product for retail, food service, and private label.</div></div>
+            </div>
+            <div class="modal-flavors">
+              <div class="flavor">Cocoa flavor</div>
+              <div class="flavor">Cinnamon flavor</div>
+            </div>
+            <div class="modal-footer-meta">
+              <div class="footer-meta-item"><small>Category</small><strong>Snack</strong></div>
+              <div class="footer-meta-item"><small>Base</small><strong>Quinoa</strong></div>
+              <div class="footer-meta-item"><small>Format</small><strong>Puffs</strong></div>
+              <div class="footer-meta-item"><small>Origin</small><strong>Ecuador</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a href="#inicio" class="brand">
+  <img src="images/logo-inti-somos.png" alt="INTI SOMOS" style="height:42px;">
+</a>
+        <p>Premium  exports from Ecuador to the world.</p>
+      </div>
+      <div>
+        <div class="footer-links">
+          <a href="#manifiesto">Manifiesto</a>
+          <a href="#productos">Productos</a>
+          <a href="#videos">Videos</a>
+          <a href="#certificaciones">Calidad</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <div class="footer-note">© 2026 INTI SOMOS. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <aside class="cart-panel" id="cartPanel" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <div class="eyebrow" style="margin-bottom:10px;">Cart</div>
+        <h3>Your cart</h3>
+      </div>
+      <button class="cart-close" id="cartClose" type="button" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <div class="cart-body" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">Aún no has agregado productos.</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Subtotal</span>
+        <strong id="cartTotal">USD $0.00</strong>
+      </div>
+      <div class="cart-note">Taxes and shipping are calculated at checkout via WhatsApp request.</div>
+      <button class="cart-checkout" id="cartCheckout" type="button">Checkout</button>
+    </div>
+  </aside>
+
+  <a class="floating-whatsapp" href="https://wa.me/593000000000" data-whatsapp-link target="_blank" aria-label="WhatsApp">✦</a>
+
+  <script>
+    const content = {
+      es: {
+        navHome: 'Inicio',
+        navManifesto: 'Manifiesto',
+        navProducts: 'Productos',
+        navVideos: 'Videos',
+        navQuality: 'Calidad',
+        navContact: 'Contacto',
+        requestInfo: 'Solicitar información',
+        heroEyebrow: 'Exports · Ecuador',
+        heroTagline: 'de la tierra al mundo',
+        heroSub: 'Nutrición andina premium para mercados internacionales',
+        heroText: 'Una landing page versión 4 con presencia editorial, conversión real y experiencia bilingüe para compradores, distribuidores y socios que esperan una imagen sofisticada, clara y memorable.',
+        heroBtnPrimary: 'Explorar portafolio',
+        heroBtnSecondary: 'Ver experiencia visual',
+        trust1: 'Imagen premium export-ready',
+        trust2: 'Videos integrados de producto',
+        trust3: 'Conversión directa por WhatsApp',
+        stat1: 'Productos',
+        stat2: 'Calidad',
+        stat3: 'Mercados',
+        stat4: 'Origen',
+        float1Small: 'Posicionamiento',
+        float1Strong: 'Una narrativa de origen andino convertida en una experiencia digital internacional.',
+        float2Small: 'Capa visual',
+        float2Strong: 'Hero cinematográfico con video, overlays suaves y composición más editorial.',
+        manifestoEyebrow: 'Manifiesto de marca',
+        manifestoTitle: 'La fuerza de un origen bien contado',
+        manifestoText: 'Esta sección reemplaza una presentación convencional por una narrativa de marca más aspiracional, refinada y adecuada para posicionar a INTI SOMOS en mercados internacionales.',
+        storyPill: 'Esencia de marca',
+        storyTitle: 'Una historia entre herencia, nutrición y visión global',
+        storyText1: 'INTI SOMOS nace del encuentro entre raíces ecuatorianas, ingredientes nobles y una mirada contemporánea sobre el bienestar. La marca no solo exporta productos: exporta una forma de entender la nutrición desde el origen, la pureza y el respeto por la tierra.',
+        storyText2: 'La versión 4 eleva el tono visual con mejor jerarquía, contenido bilingüe real y rutas de contacto listas para generar leads.',
+        storyQuote: '“La nutrición andina se convierte en una propuesta premium lista para dialogar con el mundo.”',
+        diffEyebrow: 'Diferenciales',
+        diffTitle: 'Una web que vende mejor la percepción',
+        diffText: 'Antes de vender el producto, la web debe vender la percepción correcta: calidad, orden, trazabilidad, sensibilidad estética y nivel internacional.',
+        hi1Pill: 'Identidad premium', hi1Title: 'Dirección visual más alta', hi1Text: 'Fondos más ricos, más capas, más profundidad y un ritmo editorial que se siente de marca internacional.',
+        hi2Pill: 'UX interactiva', hi2Title: 'Botones y tarjetas con más vida', hi2Text: 'Hover refinado, animaciones suaves y componentes pensados para elevar la experiencia sin recargarla.',
+        hi3Pill: 'Claridad comercial', hi3Title: 'Más enfoque en conversión', hi3Text: 'CTA más visibles, rutas de contacto más claras y narrativa orientada a compradores y socios estratégicos.',
+        productsEyebrow: 'Portafolio',
+        productsTitle: 'Productos con una presentación más premium',
+        productsText: 'Esta sección ya no solo lista productos: los presenta como una colección exportable, con estética más cuidada y lectura más elegante.',
+        collectionPill: 'Colección destacada',
+        collectionTitle: 'Andean nutrition designed for modern global markets',
+        collectionText: 'Una colección pensada para retail, wellness, convenience foods y categorías funcionales con alto potencial internacional.',
+        collectionBtn: 'Solicitar portafolio completo',
+        p1Pill: 'Proteína vegetal', p1Title: 'Freeze Dried Chochos', p1Text: 'Proteína andina práctica, moderna y de gran valor nutricional para consumidores y compradores que valoran funcionalidad y origen.',
+        p1m1: 'High protein', p1m2: 'Andean origin', p1m3: 'Export ready',
+        p2Pill: 'Fruta natural', p2Title: 'Freeze Dried Fruits', p2Text: 'Color, sabor y larga vida útil en una categoría versátil para retail premium, snacks funcionales y propuestas de wellness.',
+        p2m1: 'Natural sweetness', p2m2: 'Long shelf life', p2m3: 'Premium retail',
+        p3Pill: 'Cereales andinos', p3Title: 'Quinoa Cereal', p3Text: 'Formato ligero y crunchy con una imagen más contemporánea para consumidores que buscan nutrición, conveniencia y sabor.',
+        p3m1: 'Light texture', p3m2: 'Functional food', p3m3: 'Modern format',
+        techBtn: 'Solicitar ficha técnica',
+        videosEyebrow: 'Experiencia visual',
+        videosTitle: 'Video como argumento de marca',
+        videosText: 'En una landing premium, el video no es un adorno: es una herramienta para comunicar origen, textura, proceso y percepción de valor de forma inmediata.',
+        v1Pill: 'Brand film', v1Title: 'El origen de INTI SOMOS', v1Text: 'Muestra territorio, ingredientes, herencia y propuesta exportadora con una narrativa audiovisual que eleve la credibilidad de la marca.',
+        v2Pill: 'Product showcase', v2Title: 'Presentación de producto', v2Text: 'También puedes incrustar contenido desde YouTube o Vimeo para mantener el sitio más liviano y más fácil de actualizar.',
+        qualityEyebrow: 'Calidad y confianza',
+        qualityTitle: 'Señales visuales de seriedad comercial',
+        qualityText: 'Aquí puedes mostrar certificaciones, claims o estándares clave. Aunque aún no pongas logos definitivos, la estructura ya deja lista esa capa de confianza.',
+        c1Title: 'Trazabilidad', c1Text: 'Comunica control de origen, cadena de valor clara y lectura profesional para compradores.',
+        c2Title: 'Calidad premium', c2Text: 'Espacio ideal para certificaciones, estándares alimentarios o atributos comerciales relevantes.',
+        c3Title: 'Origen ecuatoriano', c3Text: 'Refuerza diferenciación territorial con una presencia visual más sólida y elegante.',
+        ctaEyebrow: 'Export ready',
+        ctaTitle: 'Una web premium no solo se ve mejor. Convierte mejor.',
+        ctaText: 'La versión 4 está pensada para que INTI SOMOS proyecte una imagen de mayor nivel frente a clientes, distribuidores, brokers y aliados internacionales.',
+        ctaBtn: 'Hablemos',
+        contactEyebrow: 'Contacto',
+        contactTitle: 'Conecta con potenciales compradores',
+        contactText: 'Esta sección ya queda lista para convertir visitas en conversaciones reales por WhatsApp, correo o formularios de interés comercial.',
+        formTitle: 'Solicita información',
+        formText: 'Formulario funcional listo para Formspree. Solo reemplaza la URL del action con tu endpoint real.',
+        name: 'Nombre', email: 'Correo electrónico', company: 'Empresa', message: 'Cuéntanos qué producto te interesa',
+        send: 'Enviar solicitud',
+        channelsTitle: 'Canales directos',
+        channelsText: 'Refuerza confianza con rutas claras de contacto y un tono más institucional.',
+        whatsapp: 'WhatsApp', emailLabel: 'Email', location: 'Ubicación', hours: 'Horario',
+        locationValue: 'Ecuador', hoursValue: 'Lunes a Viernes · 09:00 - 18:00',
+        footerText: 'Premium exports from Ecuador to the world.',
+        footerManifesto: 'Manifiesto', footerProducts: 'Productos', footerVideos: 'Videos', footerQuality: 'Calidad', footerContact: 'Contacto'
+      },
+      en: {
+        navHome: 'Home',
+        navManifesto: 'Manifesto',
+        navProducts: 'Products',
+        navVideos: 'Videos',
+        navQuality: 'Quality',
+        navContact: 'Contact',
+        requestInfo: 'Request information',
+        heroEyebrow: 'Exports · Ecuador',
+        heroTagline: 'from the earth to the world',
+        heroSub: 'Premium Andean nutrition for international markets',
+        heroText: 'A version 4 landing page with editorial presence, real conversion flows, and a bilingual experience for buyers, distributors, and partners expecting a sophisticated, clear, and memorable brand image.',
+        heroBtnPrimary: 'Explore portfolio',
+        heroBtnSecondary: 'View visual experience',
+        trust1: 'Premium export-ready image',
+        trust2: 'Integrated product videos',
+        trust3: 'Direct WhatsApp conversion',
+        stat1: 'Products',
+        stat2: 'Quality',
+        stat3: 'Markets',
+        stat4: 'Origin',
+        float1Small: 'Positioning',
+        float1Strong: 'An Andean-origin narrative transformed into an international digital experience.',
+        float2Small: 'Visual layer',
+        float2Strong: 'Cinematic hero with video, soft overlays, and a more editorial composition.',
+        manifestoEyebrow: 'Brand manifesto',
+        manifestoTitle: 'The strength of a well-told origin',
+        manifestoText: 'This section replaces a conventional presentation with a more aspirational, refined brand narrative designed to position INTI SOMOS in international markets.',
+        storyPill: 'Brand essence',
+        storyTitle: 'A story between heritage, nutrition, and global vision',
+        storyText1: 'INTI SOMOS emerges from the meeting point of Ecuadorian roots, noble ingredients, and a contemporary perspective on wellbeing. The brand does not simply export products: it exports a way of understanding nutrition through origin, purity, and respect for the land.',
+        storyText2: 'Version 4 elevates the visual tone with stronger hierarchy, real bilingual content, and contact paths ready to generate leads.',
+        storyQuote: '“Andean nutrition becomes a premium proposal ready to engage with the world.”',
+        diffEyebrow: 'Differentiators',
+        diffTitle: 'A website that sells perception better',
+        diffText: 'Before selling the product, the website must sell the right perception: quality, order, traceability, aesthetic sensitivity, and international level.',
+        hi1Pill: 'Premium identity', hi1Title: 'Higher visual direction', hi1Text: 'Richer backgrounds, more layers, more depth, and an editorial rhythm that feels globally premium.',
+        hi2Pill: 'Interactive UX', hi2Title: 'Buttons and cards with more life', hi2Text: 'Refined hover states, soft animations, and components designed to elevate the experience without overloading it.',
+        hi3Pill: 'Commercial clarity', hi3Title: 'Stronger conversion focus', hi3Text: 'More visible CTAs, clearer contact routes, and messaging aimed at buyers and strategic partners.',
+        productsEyebrow: 'Portfolio',
+        productsTitle: 'Products with a more premium presentation',
+        productsText: 'This section no longer simply lists products: it presents them as an export-ready collection with stronger aesthetics and more elegant reading.',
+        collectionPill: 'Collection spotlight',
+        collectionTitle: 'Andean nutrition designed for modern global markets',
+        collectionText: 'A collection designed for retail, wellness, convenience foods, and functional categories with strong international potential.',
+        collectionBtn: 'Request full portfolio',
+        p1Pill: 'Plant-based protein', p1Title: 'Freeze Dried Chochos', p1Text: 'A practical, modern Andean protein with strong nutritional value for consumers and buyers who value functionality and origin.',
+        p1m1: 'High protein', p1m2: 'Andean origin', p1m3: 'Export ready',
+        p2Pill: 'Natural fruit', p2Title: 'Freeze Dried Fruits', p2Text: 'Color, flavor, and long shelf life in a versatile category for premium retail, functional snacks, and wellness proposals.',
+        p2m1: 'Natural sweetness', p2m2: 'Long shelf life', p2m3: 'Premium retail',
+        p3Pill: 'Andean cereals', p3Title: 'Quinoa Cereal', p3Text: 'A light, crunchy format with a more contemporary image for consumers seeking nutrition, convenience, and flavor.',
+        p3m1: 'Light texture', p3m2: 'Functional food', p3m3: 'Modern format',
+        techBtn: 'Request technical sheet',
+        videosEyebrow: 'Visual experience',
+        videosTitle: 'Video as a brand argument',
+        videosText: 'On a premium landing page, video is not decoration: it is a tool to communicate origin, texture, process, and value perception immediately.',
+        v1Pill: 'Brand film', v1Title: 'The origin of INTI SOMOS', v1Text: 'Show territory, ingredients, heritage, and export vision with audiovisual storytelling that elevates brand credibility.',
+        v2Pill: 'Product showcase', v2Title: 'Product presentation', v2Text: 'You can also embed content from YouTube or Vimeo to keep the site lighter and easier to update.',
+        qualityEyebrow: 'Quality and trust',
+        qualityTitle: 'Visual signals of commercial seriousness',
+        qualityText: 'Here you can showcase certifications, claims, or key standards. Even without final logos, the structure already prepares that layer of trust.',
+        c1Title: 'Traceability', c1Text: 'Communicates origin control, a clear value chain, and professional readability for buyers.',
+        c2Title: 'Premium quality', c2Text: 'Ideal space for certifications, food standards, or relevant commercial attributes.',
+        c3Title: 'Ecuadorian origin', c3Text: 'Reinforces territorial differentiation with a stronger and more elegant visual presence.',
+        ctaEyebrow: 'Export ready',
+        ctaTitle: 'A premium website does not just look better. It converts better.',
+        ctaText: 'Version 4 is designed to help INTI SOMOS project a higher-level image to clients, distributors, brokers, and international partners.',
+        ctaBtn: 'Let’s talk',
+        contactEyebrow: 'Contact',
+        contactTitle: 'Connect with potential buyers',
+        contactText: 'This section is now ready to convert visits into real conversations through WhatsApp, email, or commercial inquiry forms.',
+        formTitle: 'Request information',
+        formText: 'Functional form ready for Formspree. Just replace the action URL with your real endpoint.',
+        name: 'Name', email: 'Email', company: 'Company', message: 'Tell us which product interests you',
+        send: 'Send request',
+        channelsTitle: 'Direct channels',
+        channelsText: 'Reinforce trust with clear contact routes and a more institutional tone.',
+        whatsapp: 'WhatsApp', emailLabel: 'Email', location: 'Location', hours: 'Hours',
+        locationValue: 'Ecuador', hoursValue: 'Monday to Friday · 09:00 - 18:00',
+        footerText: 'Premium exports from Ecuador to the world.',
+        footerManifesto: 'Manifesto', footerProducts: 'Products', footerVideos: 'Videos', footerQuality: 'Quality', footerContact: 'Contact'
+      }
+    };
+
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('nav');
+    const body = document.body;
+    const langButtons = document.querySelectorAll('.lang-switch button');
+
+    menuToggle?.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      body.classList.toggle('menu-open');
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        nav.classList.remove('open');
+        body.classList.remove('menu-open');
+      });
+    });
+
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const activateLink = () => {
+      const scrollY = window.scrollY + 140;
+      let current = sections[0]?.id || 'inicio';
+
+      sections.forEach(section => {
+        if (scrollY >= section.offsetTop) current = section.id;
+      });
+
+      links.forEach(link => {
+        const match = link.getAttribute('href') === `#${current}`;
+        link.classList.toggle('active', match);
+      });
+    };
+
+    window.addEventListener('scroll', activateLink);
+    activateLink();
+
+    function setLang(lang) {
+      const t = content[lang];
+      document.documentElement.lang = lang;
+      document.title = 'INTI SOMOS | Premium Exports';
+      document.querySelector('meta[name="description"]').setAttribute('content', lang === 'es' ? 'INTI SOMOS: premium exports from Ecuador to the world.' : 'INTI SOMOS: premium exports from Ecuador to the world.');
+
+      const map = {
+        '.nav-links a[href="#inicio"]': t.navHome,
+        '.nav-links a[href="#manifiesto"]': t.navManifesto,
+        '.nav-links a[href="#productos"]': t.navProducts,
+        '.nav-links a[href="#videos"]': t.navVideos,
+        '.nav-links a[href="#certificaciones"]': t.navQuality,
+        '.nav-links a[href="#contacto"]': t.navContact,
+        '.nav-actions .btn-primary': t.requestInfo,
+        '#inicio .eyebrow': t.heroEyebrow,
+        '.hero-tagline': t.heroTagline,
+        '.hero-sub': t.heroSub,
+        '#inicio .reveal p': t.heroText,
+        '.hero-actions .btn-primary': t.heroBtnPrimary,
+        '.hero-actions .btn-secondary': t.heroBtnSecondary,
+        '.mini-trust span:nth-child(1)': t.trust1,
+        '.mini-trust span:nth-child(2)': t.trust2,
+        '.mini-trust span:nth-child(3)': t.trust3,
+        '.stat:nth-child(1) span': t.stat1,
+        '.stat:nth-child(2) span': t.stat2,
+        '.stat:nth-child(3) span': t.stat3,
+        '.stat:nth-child(4) span': t.stat4,
+        '.floating-panel:nth-child(1) small': t.float1Small,
+        '.floating-panel:nth-child(1) strong': t.float1Strong,
+        '.floating-panel:nth-child(2) small': t.float2Small,
+        '.floating-panel:nth-child(2) strong': t.float2Strong,
+        '#manifiesto .section-head .eyebrow': t.manifestoEyebrow,
+        '#manifiesto .section-head h2': t.manifestoTitle,
+        '#manifiesto .section-head p': t.manifestoText,
+        '#manifiesto .story-card .pill': t.storyPill,
+        '#manifiesto .story-card h3': t.storyTitle,
+        '#manifiesto .story-card p:nth-of-type(1)': t.storyText1,
+        '#manifiesto .story-card p:nth-of-type(2)': t.storyText2,
+        '.story-quote': t.storyQuote,
+        'section:nth-of-type(3) .section-head .eyebrow': t.diffEyebrow,
+        'section:nth-of-type(3) .section-head h2': t.diffTitle,
+        'section:nth-of-type(3) .section-head p': t.diffText,
+        '.highlights-grid article:nth-child(1) .pill': t.hi1Pill,
+        '.highlights-grid article:nth-child(1) h3': t.hi1Title,
+        '.highlights-grid article:nth-child(1) p': t.hi1Text,
+        '.highlights-grid article:nth-child(2) .pill': t.hi2Pill,
+        '.highlights-grid article:nth-child(2) h3': t.hi2Title,
+        '.highlights-grid article:nth-child(2) p': t.hi2Text,
+        '.highlights-grid article:nth-child(3) .pill': t.hi3Pill,
+        '.highlights-grid article:nth-child(3) h3': t.hi3Title,
+        '.highlights-grid article:nth-child(3) p': t.hi3Text,
+        '#productos .section-head .eyebrow': t.productsEyebrow,
+        '#productos .section-head h2': t.productsTitle,
+        '#productos .section-head p': t.productsText,
+        '.collection-banner .pill': t.collectionPill,
+        '.collection-banner h3': t.collectionTitle,
+        '.collection-banner p': t.collectionText,
+        '.collection-banner .btn': t.collectionBtn,
+        '.products-grid article:nth-child(1) .pill': t.p1Pill,
+        '.products-grid article:nth-child(1) h3': t.p1Title,
+        '.products-grid article:nth-child(1) p': t.p1Text,
+        '.products-grid article:nth-child(1) .product-meta span:nth-child(1)': t.p1m1,
+        '.products-grid article:nth-child(1) .product-meta span:nth-child(2)': t.p1m2,
+        '.products-grid article:nth-child(1) .product-meta span:nth-child(3)': t.p1m3,
+        '.products-grid article:nth-child(1) .btn': t.techBtn,
+        '.products-grid article:nth-child(2) .pill': t.p2Pill,
+        '.products-grid article:nth-child(2) h3': t.p2Title,
+        '.products-grid article:nth-child(2) p': t.p2Text,
+        '.products-grid article:nth-child(2) .product-meta span:nth-child(1)': t.p2m1,
+        '.products-grid article:nth-child(2) .product-meta span:nth-child(2)': t.p2m2,
+        '.products-grid article:nth-child(2) .product-meta span:nth-child(3)': t.p2m3,
+        '.products-grid article:nth-child(2) .btn': t.techBtn,
+        '.products-grid article:nth-child(3) .pill': t.p3Pill,
+        '.products-grid article:nth-child(3) h3': t.p3Title,
+        '.products-grid article:nth-child(3) p': t.p3Text,
+        '.products-grid article:nth-child(3) .product-meta span:nth-child(1)': t.p3m1,
+        '.products-grid article:nth-child(3) .product-meta span:nth-child(2)': t.p3m2,
+        '.products-grid article:nth-child(3) .product-meta span:nth-child(3)': t.p3m3,
+        '.products-grid article:nth-child(3) .btn': t.techBtn,
+        '#videos .section-head .eyebrow': t.videosEyebrow,
+        '#videos .section-head h2': t.videosTitle,
+        '#videos .section-head p': t.videosText,
+        '#videos .video-grid article:nth-child(1) .pill': t.v1Pill,
+        '#videos .video-grid article:nth-child(1) h3': t.v1Title,
+        '#videos .video-grid article:nth-child(1) p': t.v1Text,
+        '#videos .video-grid article:nth-child(2) .pill': t.v2Pill,
+        '#videos .video-grid article:nth-child(2) h3': t.v2Title,
+        '#videos .video-grid article:nth-child(2) p': t.v2Text,
+        '#certificaciones .section-head .eyebrow': t.qualityEyebrow,
+        '#certificaciones .section-head h2': t.qualityTitle,
+        '#certificaciones .section-head p': t.qualityText,
+        '#certificaciones .cert-grid article:nth-child(1) h3': t.c1Title,
+        '#certificaciones .cert-grid article:nth-child(1) p': t.c1Text,
+        '#certificaciones .cert-grid article:nth-child(2) h3': t.c2Title,
+        '#certificaciones .cert-grid article:nth-child(2) p': t.c2Text,
+        '#certificaciones .cert-grid article:nth-child(3) h3': t.c3Title,
+        '#certificaciones .cert-grid article:nth-child(3) p': t.c3Text,
+        '.cta-band .eyebrow': t.ctaEyebrow,
+        '.cta-band h3': t.ctaTitle,
+        '.cta-band p': t.ctaText,
+        '.cta-band .btn': t.ctaBtn,
+        '#contacto .section-head .eyebrow': t.contactEyebrow,
+        '#contacto .section-head h2': t.contactTitle,
+        '#contacto .section-head p': t.contactText,
+        '#contacto .contact-grid article:nth-child(1) h3': t.formTitle,
+        '#contacto .contact-grid article:nth-child(1) > p': t.formText,
+        '#contacto .contact-grid article:nth-child(1) button': t.send,
+        '#contacto .contact-grid article:nth-child(2) h3': t.channelsTitle,
+        '#contacto .contact-grid article:nth-child(2) > p': t.channelsText,
+        '.contact-list li:nth-child(1) small': t.whatsapp,
+        '.contact-list li:nth-child(2) small': t.emailLabel,
+        '.contact-list li:nth-child(3) small': t.location,
+        '.contact-list li:nth-child(4) small': t.hours,
+        '.contact-list li:nth-child(3) strong': t.locationValue,
+        '.contact-list li:nth-child(4) strong': t.hoursValue,
+        'footer p': t.footerText,
+        '.footer-links a[href="#manifiesto"]': t.footerManifesto,
+        '.footer-links a[href="#productos"]': t.footerProducts,
+        '.footer-links a[href="#videos"]': t.footerVideos,
+        '.footer-links a[href="#certificaciones"]': t.footerQuality,
+        '.footer-links a[href="#contacto"]': t.footerContact
+      };
+
+      Object.entries(map).forEach(([selector, value]) => {
+        const el = document.querySelector(selector);
+        if (el) el.textContent = value;
+      });
+
+      const placeholders = {
+        '#contacto input[name="name"]': t.name,
+        '#contacto input[name="email"]': t.email,
+        '#contacto input[name="company"]': t.company,
+        '#contacto textarea[name="message"]': t.message
+      };
+
+      Object.entries(placeholders).forEach(([selector, value]) => {
+        const el = document.querySelector(selector);
+        if (el) el.placeholder = value;
+      });
+
+      langButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+      localStorage.setItem('intiLang', lang);
+    }
+
+    langButtons.forEach(btn => {
+      btn.dataset.lang = btn.textContent.trim().toLowerCase();
+      btn.addEventListener('click', () => setLang(btn.dataset.lang));
+    });
+
+    const savedLang = localStorage.getItem('intiLang') || 'es';
+    setLang(savedLang);
+
+    const cartTrigger = document.getElementById('cartTrigger');
+    const cartPanel = document.getElementById('cartPanel');
+    const cartOverlay = document.getElementById('cartOverlay');
+    const cartClose = document.getElementById('cartClose');
+    const cartItems = document.getElementById('cartItems');
+    const cartEmpty = document.getElementById('cartEmpty');
+    const cartBadge = document.getElementById('cartBadge');
+    const cartTotal = document.getElementById('cartTotal');
+    const cartCheckout = document.getElementById('cartCheckout');
+    const cartState = [];
+
+    const formatCurrency = (value) => `USD $${value.toFixed(2)}`;
+
+    const openCart = () => {
+      cartPanel?.classList.add('open');
+      cartOverlay?.classList.add('open');
+      document.body.classList.add('menu-open');
+    };
+
+    const closeCartPanel = () => {
+      cartPanel?.classList.remove('open');
+      cartOverlay?.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    };
+
+    cartTrigger?.addEventListener('click', openCart);
+    cartClose?.addEventListener('click', closeCartPanel);
+    cartOverlay?.addEventListener('click', closeCartPanel);
+
+    const renderCart = () => {
+      if (!cartItems || !cartBadge || !cartTotal || !cartEmpty) return;
+
+      const totalQty = cartState.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cartState.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      cartBadge.textContent = totalQty;
+      cartBadge.style.display = totalQty > 0 ? 'inline-flex' : 'none';
+      cartTotal.textContent = formatCurrency(totalPrice);
+      cartEmpty.style.display = cartState.length ? 'none' : 'block';
+
+      cartItems.querySelectorAll('.cart-item').forEach(node => node.remove());
+
+      cartState.forEach((item, index) => {
+        const el = document.createElement('div');
+        el.className = 'cart-item';
+        el.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <div class="cart-item-meta">
+            <div>
+              <h4>${item.name}</h4>
+              <p>${item.pack}</p>
+            </div>
+            <div class="cart-item-price">${formatCurrency(item.price)}</div>
+          </div>
+          <div class="cart-item-actions">
+            <div class="cart-mini-qty">
+              <button class="cart-mini-btn" type="button" data-cart-minus="${index}">−</button>
+              <span>${item.qty}</span>
+              <button class="cart-mini-btn" type="button" data-cart-plus="${index}">+</button>
+            </div>
+            <button class="cart-remove" type="button" data-cart-remove="${index}">Quitar</button>
+          </div>
+        `;
+        cartItems.appendChild(el);
+      });
+    };
+
+    cartItems?.addEventListener('click', (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLElement)) return;
+
+      const minusIndex = target.getAttribute('data-cart-minus');
+      const plusIndex = target.getAttribute('data-cart-plus');
+      const removeIndex = target.getAttribute('data-cart-remove');
+
+      if (minusIndex !== null) {
+        const item = cartState[Number(minusIndex)];
+        if (!item) return;
+        item.qty -= 1;
+        if (item.qty <= 0) cartState.splice(Number(minusIndex), 1);
+        renderCart();
+      }
+
+      if (plusIndex !== null) {
+        const item = cartState[Number(plusIndex)];
+        if (!item) return;
+        item.qty += 1;
+        renderCart();
+      }
+
+      if (removeIndex !== null) {
+        cartState.splice(Number(removeIndex), 1);
+        renderCart();
+      }
+    });
+
+    cartCheckout?.addEventListener('click', () => {
+      const lang = localStorage.getItem('intiLang') || 'es';
+      if (!cartState.length) {
+        openCart();
+        return;
+      }
+      const lines = cartState.map(item => `- ${item.name} x${item.qty}`).join('%0A');
+      const intro = lang === 'es'
+        ? 'Hola, quiero solicitar estos productos:%0A'
+        : 'Hello, I would like to request these products:%0A';
+      const total = `${lang === 'es' ? '%0ATotal estimado: ' : '%0AEstimated total: '}${encodeURIComponent(formatCurrency(cartState.reduce((sum, item) => sum + item.price * item.qty, 0)))}`;
+      window.open(`https://wa.me/${phone}?text=${intro}${lines}${total}`, '_blank');
+    });
+
+    const qtyControls = document.querySelectorAll('.product-actions');
+    qtyControls.forEach(control => {
+      const card = control.closest('.product-card');
+      const minus = control.querySelector('.qty-btn:first-child');
+      const plus = control.querySelector('.qty-btn:last-child');
+      const valueEl = control.querySelector('.qty-value');
+      const addBtn = control.querySelector('.add-cart-btn');
+
+      let qty = 1;
+      let animTimeout;
+
+      const animateQty = () => {
+        valueEl.classList.remove('is-changing');
+        void valueEl.offsetWidth;
+        valueEl.classList.add('is-changing');
+        clearTimeout(animTimeout);
+        animTimeout = setTimeout(() => {
+          valueEl.classList.remove('is-changing');
+        }, 220);
+      };
+
+      const renderQty = () => {
+        valueEl.textContent = qty;
+        animateQty();
+      };
+
+      minus?.addEventListener('click', () => {
+        const nextQty = Math.max(1, qty - 1);
+        if (nextQty !== qty) {
+          qty = nextQty;
+          renderQty();
+        }
+      });
+
+      plus?.addEventListener('click', () => {
+        qty += 1;
+        renderQty();
+      });
+
+      addBtn?.addEventListener('click', () => {
+        if (!card) return;
+        const name = card.dataset.productName || 'Product';
+        const price = Number(card.dataset.productPrice || '0');
+        const pack = card.dataset.productPack || '';
+        const image = card.dataset.productImage || '';
+
+        const existing = cartState.find(item => item.name === name);
+        if (existing) {
+          existing.qty += qty;
+        } else {
+          cartState.push({ name, price, pack, image, qty });
+        }
+
+        renderCart();
+        openCart();
+
+        const original = addBtn.querySelector('span').textContent;
+        addBtn.querySelector('span').textContent = `ADDED ${qty}`;
+        setTimeout(() => {
+          addBtn.querySelector('span').textContent = original;
+        }, 1400);
+      });
+    });
+
+    renderCart();
+
+    const productModal = document.getElementById('productModal');
+    const closeProductModal = document.getElementById('closeProductModal');
+    const openProductButtons = document.querySelectorAll('[data-open-product]');
+
+    openProductButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        productModal?.classList.add('open');
+        document.body.classList.add('menu-open');
+      });
+    });
+
+    closeProductModal?.addEventListener('click', () => {
+      productModal?.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    });
+
+    productModal?.addEventListener('click', (event) => {
+      if (event.target === productModal) {
+        productModal.classList.remove('open');
+        document.body.classList.remove('menu-open');
+      }
+    });
+
+    const form = document.getElementById('leadForm');
+    const whatsButtons = document.querySelectorAll('[data-whatsapp-link]');
+    const phone = '593000000000';
+
+    function updateWhatsLinks(lang) {
+      const text = lang === 'es'
+        ? 'Hola, quiero recibir más información sobre INTI SOMOS y su portafolio.'
+        : 'Hello, I would like to receive more information about INTI SOMOS and its portfolio.';
+      const link = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+      whatsButtons.forEach(btn => btn.href = link);
+    }
+
+    updateWhatsLinks(savedLang);
+    langButtons.forEach(btn => btn.addEventListener('click', () => updateWhatsLinks(btn.dataset.lang)));
+
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const status = document.getElementById('formStatus');
+      const lang = localStorage.getItem('intiLang') || 'es';
+
+      submitBtn.disabled = true;
+      status.textContent = lang === 'es' ? 'Enviando...' : 'Sending...';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.reset();
+          status.textContent = lang === 'es'
+            ? 'Gracias. Tu solicitud fue enviada correctamente.'
+            : 'Thank you. Your request was sent successfully.';
+        } else {
+          throw new Error('Form error');
+        }
+      } catch (error) {
+        status.textContent = lang === 'es'
+          ? 'No se pudo enviar. Revisa el endpoint de Formspree o tu conexión.'
+          : 'Could not send. Check your Formspree endpoint or your connection.';
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
