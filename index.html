@@ -49,52 +49,66 @@
     button, input, textarea { font: inherit; }
 
     .container {
-      width: min(90%, var(--max));
+      width: min(92%, var(--max));
       margin: 0 auto;
+      padding: 0 12px;
     }
 
     .topbar {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(248, 244, 236, 0.82);
-      backdrop-filter: blur(16px);
+      background: rgba(248, 244, 236, 0.72);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
       border-bottom: 1px solid rgba(13, 35, 69, 0.08);
+      transition: all 0.35s ease;
+    }
+
+    .topbar.scrolled {
+      background: rgba(248, 244, 236, 0.88);
+      box-shadow: 0 10px 30px rgba(13, 35, 69, 0.08);
+      border-bottom: 1px solid rgba(13, 35, 69, 0.10);
     }
 
     .nav {
-      display: flex;
+      display: grid;
+      grid-template-columns: 170px 1fr auto;
       align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      min-height: 96px;
+      gap: 28px;
+      min-height: 98px;
       position: relative;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      justify-content: center;
-      min-width: 150px;
+      justify-content: flex-start;
+      min-width: 170px;
       white-space: nowrap;
+      padding-left: 6px;
+      justify-self: start;
     }
 
     .brand img {
       height: 78px;
       width: auto;
       object-fit: contain;
-      filter: drop-shadow(0 6px 16px rgba(13, 35, 69, 0.10));
-      transition: transform 0.25s ease;
+      filter: drop-shadow(0 8px 18px rgba(13, 35, 69, 0.10));
+      transition: transform 0.28s ease, filter 0.28s ease;
     }
 
     .brand:hover img {
       transform: scale(1.03);
+      filter: drop-shadow(0 10px 22px rgba(13, 35, 69, 0.14));
     }
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      justify-content: center;
       align-items: center;
+      gap: 34px;
+      justify-self: center;
       font-size: 0.88rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -103,19 +117,26 @@
     .nav-links a {
       position: relative;
       color: var(--navy);
-      opacity: 0.92;
-      padding-bottom: 8px;
+      opacity: 0.9;
+      padding: 10px 0;
+      transition: color 0.25s ease, opacity 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      opacity: 1;
     }
 
     .nav-links a::after {
       content: "";
       position: absolute;
-      left: 0;
-      bottom: 0;
+      left: 50%;
+      bottom: 2px;
       width: 0;
       height: 2px;
+      transform: translateX(-50%);
       background: linear-gradient(90deg, var(--gold), #e4c28e);
-      transition: width 0.25s ease;
+      transition: width 0.28s ease;
     }
 
     .nav-links a:hover::after,
@@ -125,28 +146,30 @@
 
     .nav-actions {
       display: flex;
-      gap: 14px;
       align-items: center;
+      justify-content: flex-end;
+      justify-self: end;
+      gap: 14px;
       flex-shrink: 0;
     }
 
     .lang-switch {
       display: inline-flex;
       align-items: center;
-      border: 1px solid rgba(13, 35, 69, 0.12);
+      border: 1px solid rgba(13, 35, 69, 0.10);
       border-radius: 999px;
       overflow: hidden;
-      background: rgba(255,255,255,0.88);
-      box-shadow: 0 8px 20px rgba(13, 35, 69, 0.08);
-      min-width: 108px;
-      height: 54px;
+      background: rgba(255,255,255,0.9);
+      box-shadow: 0 8px 20px rgba(13, 35, 69, 0.06);
+      min-width: 110px;
+      height: 56px;
     }
 
     .lang-switch button {
       border: 0;
       background: transparent;
-      min-width: 54px;
-      height: 54px;
+      min-width: 55px;
+      height: 56px;
       padding: 0 18px;
       cursor: pointer;
       color: var(--navy);
@@ -210,9 +233,11 @@
 
     .nav-actions .btn.btn-primary {
       min-height: 54px;
-      padding: 0 26px;
+      padding: 0 24px;
       white-space: nowrap;
-      font-size: 0.86rem;
+      font-size: 0.84rem;
+      border-radius: 999px;
+      box-shadow: 0 12px 28px rgba(13, 35, 69, 0.14);
     }
 
     .menu-toggle {
@@ -230,17 +255,23 @@
 
     .cart-trigger {
       position: relative;
-      width: 54px;
-      height: 54px;
+      width: 56px;
+      height: 56px;
       border-radius: 999px;
-      border: 1px solid rgba(13, 35, 69, 0.12);
+      border: 1px solid rgba(13, 35, 69, 0.10);
       background: rgba(255,255,255,0.92);
       color: var(--navy);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 26px rgba(13, 35, 69, 0.08);
+      box-shadow: 0 8px 20px rgba(13, 35, 69, 0.06);
       cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .cart-trigger:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(13, 35, 69, 0.10);
     }
 
     .cart-trigger svg {
@@ -1414,126 +1445,6 @@
       line-height: 1.4;
     }
 
-    @page {
-      size: A4;
-      margin: 12mm;
-    }
-
-    @media print {
-      html, body {
-        background: #ffffff !important;
-      }
-
-      .topbar,
-      .menu-toggle,
-      .cart-trigger,
-      .floating-whatsapp,
-      .cart-overlay,
-      .cart-panel,
-      .product-modal,
-      .hero-actions,
-      .lang-switch,
-      .nav-actions .btn,
-      .product-actions,
-      #videos,
-      #contacto form,
-      .cta-band .btn {
-        display: none !important;
-      }
-
-      .hero-watermark {
-        opacity: 0.05 !important;
-        width: 520px !important;
-      }
-
-      .hero-product-blur img {
-        opacity: 0.08 !important;
-        filter: blur(14px) !important;
-      }
-
-      .topbar {
-        position: static !important;
-        border-bottom: 0 !important;
-        background: #fff !important;
-      }
-
-      .nav {
-        min-height: auto;
-        padding: 0 0 16px;
-      }
-
-      .nav-links {
-        display: none !important;
-      }
-
-      .hero,
-      section,
-      footer {
-        padding: 20px 0 !important;
-      }
-
-      .hero::before,
-      .hero::after {
-        display: none !important;
-      }
-
-      .hero-grid,
-      .hero-content {
-        max-width: 100% !important;
-      }
-
-      .hero h1 {
-        font-size: 42px !important;
-      }
-
-      .hero-tagline {
-        font-size: 24px !important;
-      }
-
-      .stats {
-        max-width: 100% !important;
-        box-shadow: none !important;
-      }
-
-      .products-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 14px !important;
-      }
-
-      .product-card,
-      .card,
-      .collection-banner,
-      .video-card,
-      .contact-card,
-      .cert-card {
-        break-inside: avoid;
-        page-break-inside: avoid;
-        box-shadow: none !important;
-        background: #fff !important;
-      }
-
-      .product-media {
-        aspect-ratio: 1 / 1;
-      }
-
-      .product-topline h3 {
-        font-size: 28px !important;
-      }
-
-      .product-price {
-        font-size: 28px !important;
-      }
-
-      .cert-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-      }
-
-      .contact-grid,
-      .footer-grid {
-        grid-template-columns: 1fr !important;
-      }
-    }
-
     @media (max-width: 1160px) {
       .products-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1561,6 +1472,12 @@
 
     @media (max-width: 900px) {
       .menu-toggle { display: inline-grid; place-items: center; }
+
+      .nav {
+        grid-template-columns: auto 1fr auto;
+        gap: 12px;
+        min-height: 88px;
+      }
 
       .nav-links,
       .nav-actions .lang-switch,
@@ -1626,6 +1543,7 @@
     @media (max-width: 640px) {
       .brand {
         min-width: auto;
+        padding-left: 0;
       }
 
       .brand img {
@@ -1633,7 +1551,19 @@
       }
 
       .nav {
+        grid-template-columns: auto 1fr auto;
         min-height: 84px;
+        gap: 12px;
+      }
+
+      .nav-links,
+      .nav-actions .lang-switch,
+      .nav-actions > a {
+        display: none;
+      }
+
+      .nav-actions {
+        gap: 10px;
       }
 
       .products-grid {
@@ -1682,34 +1612,6 @@
       .floating-whatsapp {
         right: 16px;
         bottom: 16px;
-      }
-
-      .nav-actions {
-        width: 100%;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        gap: 12px;
-      }
-
-      .lang-switch {
-        min-width: 96px;
-        height: 52px;
-        flex: 0 0 auto;
-      }
-
-      .lang-switch button {
-        min-width: 48px;
-        height: 52px;
-        padding: 0 14px;
-        font-size: 0.95rem;
-      }
-
-      .nav-actions .btn.btn-primary {
-        min-height: 52px;
-        padding: 0 22px;
-        font-size: 0.84rem;
-        width: auto;
-        flex: 1 1 auto;
       }
     }
   </style>
@@ -1809,12 +1711,7 @@
         </div>
 
         <div class="products-grid">
-          <article class="card product-card reveal"
-            data-product-name="Freeze Dried Chochos"
-            data-product-price="8.90"
-            data-product-pack="SNACK BAG · 80G"
-            data-product-image="images/product-chochos.jpg"
-            data-watermark="images/product-chochos.jpg">
+          <article class="card product-card reveal" data-product-name="Freeze Dried Chochos" data-product-price="8.90" data-product-pack="SNACK BAG · 80G" data-product-image="images/product-chochos.jpg" data-watermark="images/product-chochos.jpg">
             <div class="product-media"><img src="images/product-chochos.jpg" alt="Freeze dried chochos"></div>
             <div class="pill" data-i18n="p1Pill">Plant-based protein</div>
             <div class="product-topline">
@@ -1847,12 +1744,7 @@
             </div>
           </article>
 
-          <article class="card product-card reveal"
-            data-product-name="Freeze Dried Fruits"
-            data-product-price="6.50"
-            data-product-pack="VARIETY PACK · 20G"
-            data-product-image="images/product-fruit.jpg"
-            data-watermark="images/product-fruit.jpg">
+          <article class="card product-card reveal" data-product-name="Freeze Dried Fruits" data-product-price="6.50" data-product-pack="VARIETY PACK · 20G" data-product-image="images/product-fruit.jpg" data-watermark="images/product-fruit.jpg">
             <div class="product-media"><img src="images/product-fruit.jpg" alt="Freeze dried fruits"></div>
             <div class="pill" data-i18n="p2Pill">Natural fruit</div>
             <div class="product-topline">
@@ -1885,12 +1777,7 @@
             </div>
           </article>
 
-          <article class="card product-card reveal"
-            data-product-name="Quinoa Cereal"
-            data-product-price="11.00"
-            data-product-pack="BOX · 255G"
-            data-product-image="images/product-cereal.jpg"
-            data-watermark="images/product-cereal.jpg">
+          <article class="card product-card reveal" data-product-name="Quinoa Cereal" data-product-price="11.00" data-product-pack="BOX · 255G" data-product-image="images/product-cereal.jpg" data-watermark="images/product-cereal.jpg">
             <div class="product-media"><img src="images/product-cereal.jpg" alt="Quinoa cereal"></div>
             <div class="pill" data-i18n="p3Pill">Andean cereals</div>
             <div class="product-topline">
@@ -1923,12 +1810,7 @@
             </div>
           </article>
 
-          <article class="card product-card reveal"
-            data-product-name="Chocolate Covered Chochos"
-            data-product-price="9.80"
-            data-product-pack="POUCH · 120G"
-            data-product-image="images/product-choco-chochos.jpg"
-            data-watermark="images/product-choco-chochos.jpg">
+          <article class="card product-card reveal" data-product-name="Chocolate Covered Chochos" data-product-price="9.80" data-product-pack="POUCH · 120G" data-product-image="images/product-choco-chochos.jpg" data-watermark="images/product-choco-chochos.jpg">
             <div class="product-media"><img src="images/product-choco-chochos.jpg" alt="Chocolate covered chochos"></div>
             <div class="pill">Premium snack</div>
             <div class="product-topline">
@@ -1961,12 +1843,7 @@
             </div>
           </article>
 
-          <article class="card product-card reveal"
-            data-product-name="Chocho Snack with Chili"
-            data-product-price="7.20"
-            data-product-pack="JAR · 250G"
-            data-product-image="images/product-chili-chochos.jpg"
-            data-watermark="images/product-chili-chochos.jpg">
+          <article class="card product-card reveal" data-product-name="Chocho Snack with Chili" data-product-price="7.20" data-product-pack="JAR · 250G" data-product-image="images/product-chili-chochos.jpg" data-watermark="images/product-chili-chochos.jpg">
             <div class="product-media"><img src="images/product-chili-chochos.jpg" alt="Chocho snack with chili"></div>
             <div class="pill">Gourmet ready to eat</div>
             <div class="product-topline">
@@ -1999,12 +1876,7 @@
             </div>
           </article>
 
-          <article class="card product-card reveal"
-            data-product-name="Pancake Mix"
-            data-product-price="8.40"
-            data-product-pack="BAG · 400G"
-            data-product-image="images/product-pancake.jpg"
-            data-watermark="images/product-pancake.jpg">
+          <article class="card product-card reveal" data-product-name="Pancake Mix" data-product-price="8.40" data-product-pack="BAG · 400G" data-product-image="images/product-pancake.jpg" data-watermark="images/product-pancake.jpg">
             <div class="product-media"><img src="images/product-pancake.jpg" alt="Pancake mix"></div>
             <div class="pill">Breakfast mix</div>
             <div class="product-topline">
@@ -2037,12 +1909,7 @@
             </div>
           </article>
 
-          <article class="card product-card reveal"
-            data-product-name="Chocho Puffs"
-            data-product-price="7.50"
-            data-product-pack="BAG · 60G"
-            data-product-image="images/product-chocho-puffs.jpg"
-            data-watermark="images/product-chocho-puffs.jpg">
+          <article class="card product-card reveal" data-product-name="Chocho Puffs" data-product-price="7.50" data-product-pack="BAG · 60G" data-product-image="images/product-chocho-puffs.jpg" data-watermark="images/product-chocho-puffs.jpg">
             <div class="product-media"><img src="images/product-chocho-puffs.jpg" alt="Chocho puffs"></div>
             <div class="pill">High protein snack</div>
             <div class="product-topline">
@@ -2455,9 +2322,18 @@
     const nav = document.getElementById('nav');
     const body = document.body;
     const langButtons = document.querySelectorAll('.lang-switch button');
+    const topbar = document.querySelector('.topbar');
 
     window.addEventListener('load', () => {
       document.body.classList.add('loaded');
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        topbar.classList.add('scrolled');
+      } else {
+        topbar.classList.remove('scrolled');
+      }
     });
 
     menuToggle?.addEventListener('click', () => {
