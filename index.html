@@ -66,21 +66,29 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
-      min-height: 88px;
+      gap: 24px;
+      min-height: 96px;
       position: relative;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      justify-content: center;
+      min-width: 150px;
       white-space: nowrap;
     }
 
     .brand img {
-      height: 46px;
+      height: 78px;
       width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 16px rgba(13, 35, 69, 0.10));
+      transition: transform 0.25s ease;
+    }
+
+    .brand:hover img {
+      transform: scale(1.03);
     }
 
     .nav-links {
@@ -297,18 +305,18 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) scale(0.96);
-      width: min(680px, 70vw);
-      opacity: 0.02;
-      filter: grayscale(100%);
+      transform: translate(-50%, -50%) scale(1);
+      width: min(900px, 85vw);
+      opacity: 0.08;
+      filter: grayscale(100%) blur(3px) contrast(1.1);
       pointer-events: none;
       z-index: -2;
-      transition: all 1.6s ease;
+      transition: all 0.8s ease;
     }
 
     body.loaded .hero-watermark {
-      opacity: 0.05;
-      transform: translate(-50%, -50%) scale(1.04);
+      opacity: 0.12;
+      transform: translate(-50%, -50%) scale(1.08);
     }
 
     .hero-product-blur {
@@ -722,36 +730,6 @@
       stroke-linecap: round;
       stroke-linejoin: round;
       flex-shrink: 0;
-    }
-
-    .product-cta-row {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .product-link-btn {
-      min-height: 48px;
-      padding: 0 18px;
-      border: 1px solid rgba(13,35,69,0.12);
-      border-radius: 14px;
-      background: rgba(255,255,255,0.78);
-      color: var(--navy);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-size: 0.7rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.25s ease;
-    }
-
-    .product-link-btn:hover {
-      background: var(--navy);
-      color: var(--white);
-      border-color: var(--navy);
     }
 
     .video-grid,
@@ -1457,7 +1435,6 @@
       .lang-switch,
       .nav-actions .btn,
       .product-actions,
-      .product-cta-row,
       #videos,
       #contacto form,
       .cta-band .btn {
@@ -1465,8 +1442,8 @@
       }
 
       .hero-watermark {
-        opacity: 0.035 !important;
-        width: 420px !important;
+        opacity: 0.05 !important;
+        width: 520px !important;
       }
 
       .hero-product-blur img {
@@ -1633,7 +1610,7 @@
       }
 
       .hero-watermark {
-        width: min(460px, 78vw);
+        width: min(560px, 82vw);
       }
 
       .hero-product-blur img {
@@ -1647,6 +1624,18 @@
     }
 
     @media (max-width: 640px) {
+      .brand {
+        min-width: auto;
+      }
+
+      .brand img {
+        height: 58px;
+      }
+
+      .nav {
+        min-height: 84px;
+      }
+
       .products-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -1669,7 +1658,7 @@
       .btn { width: 100%; }
 
       .hero-watermark {
-        width: min(340px, 82vw);
+        width: min(380px, 84vw);
       }
 
       .hero-product-blur img {
@@ -1766,7 +1755,7 @@
 
   <main>
     <section class="hero" id="inicio">
-      <img src="images/logo-inti-somos.png" class="hero-watermark" alt="">
+      <img src="images/logo-inti-somos.png" class="hero-watermark" id="watermark" alt="">
 
       <div class="hero-product-blur">
         <img src="images/product-cereal.jpg" alt="">
@@ -1804,7 +1793,7 @@
             <h2 data-i18n="productsTitle">Productos con una presentación más premium</h2>
           </div>
           <p data-i18n="productsText">
-            Esta sección presenta una colección exportable con estética cuidada, lectura elegante y mejor separación visual entre productos.
+            More than food, INTI SOMOS is a bridge between ancestral wisdom and modern living—bringing conscious nutrition to a global community.
           </p>
         </div>
 
@@ -1820,7 +1809,12 @@
         </div>
 
         <div class="products-grid">
-          <article class="card product-card reveal" data-product-name="Freeze Dried Chochos" data-product-price="8.90" data-product-pack="SNACK BAG · 80G" data-product-image="images/product-chochos.jpg">
+          <article class="card product-card reveal"
+            data-product-name="Freeze Dried Chochos"
+            data-product-price="8.90"
+            data-product-pack="SNACK BAG · 80G"
+            data-product-image="images/product-chochos.jpg"
+            data-watermark="images/product-chochos.jpg">
             <div class="product-media"><img src="images/product-chochos.jpg" alt="Freeze dried chochos"></div>
             <div class="pill" data-i18n="p1Pill">Plant-based protein</div>
             <div class="product-topline">
@@ -1853,7 +1847,12 @@
             </div>
           </article>
 
-          <article class="card product-card reveal" data-product-name="Freeze Dried Fruits" data-product-price="6.50" data-product-pack="VARIETY PACK · 20G" data-product-image="images/product-fruit.jpg">
+          <article class="card product-card reveal"
+            data-product-name="Freeze Dried Fruits"
+            data-product-price="6.50"
+            data-product-pack="VARIETY PACK · 20G"
+            data-product-image="images/product-fruit.jpg"
+            data-watermark="images/product-fruit.jpg">
             <div class="product-media"><img src="images/product-fruit.jpg" alt="Freeze dried fruits"></div>
             <div class="pill" data-i18n="p2Pill">Natural fruit</div>
             <div class="product-topline">
@@ -1886,7 +1885,12 @@
             </div>
           </article>
 
-          <article class="card product-card reveal" data-product="quinoa-cereal" data-product-name="Quinoa Cereal" data-product-price="11.00" data-product-pack="BOX · 255G" data-product-image="images/product-cereal.jpg">
+          <article class="card product-card reveal"
+            data-product-name="Quinoa Cereal"
+            data-product-price="11.00"
+            data-product-pack="BOX · 255G"
+            data-product-image="images/product-cereal.jpg"
+            data-watermark="images/product-cereal.jpg">
             <div class="product-media"><img src="images/product-cereal.jpg" alt="Quinoa cereal"></div>
             <div class="pill" data-i18n="p3Pill">Andean cereals</div>
             <div class="product-topline">
@@ -1917,12 +1921,14 @@
                 <span>ADD</span>
               </button>
             </div>
-            <div class="product-cta-row">
-              <button class="product-link-btn" type="button" data-open-product="quinoa-cereal">Ver detalle</button>
-            </div>
           </article>
 
-          <article class="card product-card reveal" data-product-name="Chocolate Covered Chochos" data-product-price="9.80" data-product-pack="POUCH · 120G" data-product-image="images/product-choco-chochos.jpg">
+          <article class="card product-card reveal"
+            data-product-name="Chocolate Covered Chochos"
+            data-product-price="9.80"
+            data-product-pack="POUCH · 120G"
+            data-product-image="images/product-choco-chochos.jpg"
+            data-watermark="images/product-choco-chochos.jpg">
             <div class="product-media"><img src="images/product-choco-chochos.jpg" alt="Chocolate covered chochos"></div>
             <div class="pill">Premium snack</div>
             <div class="product-topline">
@@ -1955,7 +1961,12 @@
             </div>
           </article>
 
-          <article class="card product-card reveal" data-product-name="Chocho Snack with Chili" data-product-price="7.20" data-product-pack="JAR · 250G" data-product-image="images/product-chili-chochos.jpg">
+          <article class="card product-card reveal"
+            data-product-name="Chocho Snack with Chili"
+            data-product-price="7.20"
+            data-product-pack="JAR · 250G"
+            data-product-image="images/product-chili-chochos.jpg"
+            data-watermark="images/product-chili-chochos.jpg">
             <div class="product-media"><img src="images/product-chili-chochos.jpg" alt="Chocho snack with chili"></div>
             <div class="pill">Gourmet ready to eat</div>
             <div class="product-topline">
@@ -1988,7 +1999,12 @@
             </div>
           </article>
 
-          <article class="card product-card reveal" data-product-name="Pancake Mix" data-product-price="8.40" data-product-pack="BAG · 400G" data-product-image="images/product-pancake.jpg">
+          <article class="card product-card reveal"
+            data-product-name="Pancake Mix"
+            data-product-price="8.40"
+            data-product-pack="BAG · 400G"
+            data-product-image="images/product-pancake.jpg"
+            data-watermark="images/product-pancake.jpg">
             <div class="product-media"><img src="images/product-pancake.jpg" alt="Pancake mix"></div>
             <div class="pill">Breakfast mix</div>
             <div class="product-topline">
@@ -2021,7 +2037,12 @@
             </div>
           </article>
 
-          <article class="card product-card reveal" data-product-name="Chocho Puffs" data-product-price="7.50" data-product-pack="BAG · 60G" data-product-image="images/product-chocho-puffs.jpg">
+          <article class="card product-card reveal"
+            data-product-name="Chocho Puffs"
+            data-product-price="7.50"
+            data-product-pack="BAG · 60G"
+            data-product-image="images/product-chocho-puffs.jpg"
+            data-watermark="images/product-chocho-puffs.jpg">
             <div class="product-media"><img src="images/product-chocho-puffs.jpg" alt="Chocho puffs"></div>
             <div class="pill">High protein snack</div>
             <div class="product-topline">
@@ -2312,7 +2333,7 @@
         stat4: 'Origen',
         productsEyebrow: 'Portafolio',
         productsTitle: 'Productos con una presentación más premium',
-        productsText: 'Esta sección presenta una colección exportable con estética cuidada, lectura elegante y mejor separación visual entre productos.',
+        productsText: 'More than food, INTI SOMOS is a bridge between ancestral wisdom and modern living—bringing conscious nutrition to a global community.',
         collectionPill: 'Colección destacada',
         collectionTitle: 'Andean nutrition designed for modern global markets',
         collectionText: 'Una colección pensada para retail, wellness, convenience foods y categorías funcionales con alto potencial internacional.',
@@ -2379,7 +2400,7 @@
         stat4: 'Origin',
         productsEyebrow: 'Portfolio',
         productsTitle: 'Products with a more premium presentation',
-        productsText: 'This section presents an export-ready collection with stronger aesthetics, elegant reading and better visual spacing between products.',
+        productsText: 'More than food, INTI SOMOS is a bridge between ancestral wisdom and modern living—bringing conscious nutrition to a global community.',
         collectionPill: 'Collection spotlight',
         collectionTitle: 'Andean nutrition designed for modern global markets',
         collectionText: 'A collection designed for retail, wellness, convenience foods and functional categories with strong international potential.',
@@ -2696,14 +2717,6 @@
 
     const productModal = document.getElementById('productModal');
     const closeProductModal = document.getElementById('closeProductModal');
-    const openProductButtons = document.querySelectorAll('[data-open-product]');
-
-    openProductButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        productModal?.classList.add('open');
-        document.body.classList.add('menu-open');
-      });
-    });
 
     closeProductModal?.addEventListener('click', () => {
       productModal?.classList.remove('open');
@@ -2760,6 +2773,28 @@
       } finally {
         submitBtn.disabled = false;
       }
+    });
+
+    const watermark = document.getElementById('watermark');
+    const defaultLogo = 'images/logo-inti-somos.png';
+
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        const img = card.getAttribute('data-watermark');
+        if (img && watermark) {
+          watermark.style.opacity = '0.18';
+          watermark.style.transform = 'translate(-50%, -50%) scale(1.12)';
+          watermark.src = img;
+        }
+      });
+
+      card.addEventListener('mouseleave', () => {
+        if (watermark) {
+          watermark.style.opacity = '0.12';
+          watermark.style.transform = 'translate(-50%, -50%) scale(1.08)';
+          watermark.src = defaultLogo;
+        }
+      });
     });
   </script>
 </body>
