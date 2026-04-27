@@ -728,7 +728,31 @@
       background: rgba(200,155,92,0.08);
     }
 
+    .pack-select {
+      width: 100%;
+      min-height: 50px;
+      border: 1px solid rgba(13,35,69,0.12);
+      background: rgba(255,255,255,0.96);
+      color: var(--navy);
+      border-radius: 0;
+      padding: 0 12px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .product-actions:has(.pack-select) {
+      grid-template-columns: minmax(120px, 140px) 1fr;
+    }
+
+    .product-actions:has(.pack-select) .add-cart-btn {
+      grid-column: 1 / -1;
+    }
+
     .add-cart-btn {
+      width: 100%;
       min-height: 50px;
       border: 0;
       border-radius: 16px;
@@ -740,8 +764,10 @@
       gap: 10px;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.72rem;
+      line-height: 1;
+      white-space: nowrap;
       cursor: pointer;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
       box-shadow: 0 12px 24px rgba(200,155,92,0.22);
@@ -1749,11 +1775,11 @@
         </a>
 
         <div class="nav-links">
-          <a href="#inicio" class="active" data-i18n="navHome">Inicio</a>
-          <a href="#productos" data-i18n="navProducts">Productos</a>
-          <a href="#equipo" data-i18n="navTeam">Equipo</a>
-          <a href="#certificaciones" data-i18n="navQuality">Calidad</a>
-          <a href="#contacto" data-i18n="navContact">Contacto</a>
+          <a href="#inicio" class="active" data-i18n="navHome">Home</a>
+          <a href="#productos" data-i18n="navProducts">Products</a>
+          <a href="#equipo" data-i18n="navTeam">Team</a>
+          <a href="#certificaciones" data-i18n="navQuality">Quality</a>
+          <a href="#contacto" data-i18n="navContact">Contact</a>
         </div>
 
         <div class="nav-actions">
@@ -1762,7 +1788,7 @@
             <button type="button" data-lang="en">EN</button>
           </div>
 
-          <button class="cart-trigger" id="cartTrigger" type="button" aria-label="Abrir carrito">
+          <button class="cart-trigger" id="cartTrigger" type="button" aria-label="Open cart">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M8 10V7a4 4 0 1 1 8 0v3" />
               <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
@@ -1771,7 +1797,7 @@
             <span class="cart-badge" id="cartBadge">0</span>
           </button>
 
-          <a class="btn btn-primary" href="#contacto" data-i18n="requestInfo">Solicitar información</a>
+          <a class="btn btn-primary" href="#contacto" data-i18n="requestInfo">Request information</a>
         </div>
 
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
@@ -1794,7 +1820,7 @@
           <div class="eyebrow" data-i18n="heroEyebrow">Ecuador · Chocho-Based Andean Foods</div>
           <h1>INTI SOMOS</h1>
           <div class="hero-tagline" data-i18n="heroTagline">Chocho-based plant protein from the Andes</div>
-          <p data-i18n="heroText">Un portafolio enfocado en chocho: ingrediente andino ancestral transformado en soluciones modernas, shelf-stable, para retail y food service.</p>
+          <p data-i18n="heroText">We develop products based on chocho — an Andean legume — adapted to retail, food service and international brand opportunities.</p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#productos" data-i18n="heroBtnPrimary">Explorar portafolio</a>
@@ -1819,7 +1845,7 @@
             <h2>Chocho is the center of the portfolio.</h2>
           </div>
           <p>
-            INTI SOMOS está posicionado alrededor del chocho, un ingrediente andino ancestral de proteína vegetal. Quinoa, cacao y frutas funcionan como complementos del portafolio, mientras el chocho lidera la historia comercial.
+            INTI SOMOS is positioned around chocho, an ancestral Andean plant-protein ingredient. Quinoa, cacao and fruits complement the portfolio, while chocho leads the commercial story.
           </p>
         </div>
 
@@ -1827,17 +1853,17 @@
           <article class="card cert-card reveal">
             <div class="cert-icon">01</div>
             <h3>Plant-based protein</h3>
-            <p>El chocho entrega un ancla nutricional clara para el catálogo.</p>
+            <p>Chocho provides a clear nutritional anchor for the catalog.</p>
           </article>
           <article class="card cert-card reveal">
             <div class="cert-icon">02</div>
             <h3>Multiple formats</h3>
-            <p>Freeze-dried chochos, puffs, chocolate covered chochos, chili jars y pancake mix crean una familia escalable.</p>
+            <p>Freeze-dried chochos, puffs, chocolate-covered chochos, chili jars and pancake mix create a scalable product family.</p>
           </article>
           <article class="card cert-card reveal">
             <div class="cert-icon">03</div>
             <h3>Retail + food service</h3>
-            <p>Formatos ready-to-eat, breakfast, snack y gourmet para conversaciones comerciales.</p>
+            <p>Ready-to-eat, breakfast, snack and gourmet formats for commercial conversations.</p>
           </article>
         </div>
       </div>
@@ -1851,7 +1877,7 @@
             <h2>Chocho Plant Protein</h2>
           </div>
           <p>
-            Fuente ancestral de proteína andina y base del portafolio INTI SOMOS. En el catálogo, el chocho freeze-dried se presenta como high protein, gluten-free, de origen andino y con zero cholesterol.
+            An ancestral Andean protein source and the foundation of the INTI SOMOS portfolio. In the catalog, freeze-dried chocho is presented as high protein, gluten-free, Andean origin and zero cholesterol.
           </p>
         </div>
 
@@ -1859,17 +1885,17 @@
           <article class="card cert-card reveal">
             <div class="cert-icon">01</div>
             <h3>Buyer anchor</h3>
-            <p>El chocho explica la diferencia nutricional y justifica la existencia del resto del portafolio.</p>
+            <p>Chocho explains the nutritional difference and supports the rest of the portfolio.</p>
           </article>
           <article class="card cert-card reveal">
             <div class="cert-icon">02</div>
-            <h3>Base del portafolio</h3>
-            <p>Categoría: protein. Base: chocho. Tipo: plant. Origen: Ecuador.</p>
+            <h3>Portfolio base</h3>
+            <p>Category: protein. Base: chocho. Type: plant. Origin: Ecuador.</p>
           </article>
           <article class="card cert-card reveal">
             <div class="cert-icon">03</div>
-            <h3>Comparativo nutricional</h3>
-            <p>El catálogo destaca al chocho por proteína, fibra y calcio con colesterol cero, según análisis comparativo nutricional.</p>
+            <h3>Nutritional comparison</h3>
+            <p>The catalog highlights chocho for protein, fiber and calcium with zero cholesterol according to the nutritional comparison.</p>
           </article>
         </div>
       </div>
@@ -1882,20 +1908,20 @@
             <div class="eyebrow" data-i18n="productsEyebrow">Portafolio</div>
             <h2 data-i18n="productsTitle">Chocho-led product portfolio</h2>
           </div>
-          <p data-i18n="productsText">Portafolio liderado por chocho y respaldado por ingredientes andinos complementarios en formatos prácticos y shelf-stable.</p>
+          <p data-i18n="productsText">A chocho-led portfolio supported by complementary Andean ingredients in practical, shelf-stable formats.</p>
         </div>
 
         <div class="collection-banner reveal">
           <div>
             <div class="pill" style="background:rgba(255,255,255,0.1);color:#f0cf9a;border-color:rgba(240,207,154,0.24);" data-i18n="collectionPill">Collection spotlight</div>
             <h3 data-i18n="collectionTitle">Andean-based food solutions</h3>
-            <p data-i18n="collectionText">Chocho protein, premium chocho snack, ready-to-eat chocho y extensiones funcionales: pancake mix, quinoa cereal y freeze-dried fruits.</p>
+            <p data-i18n="collectionText">Chocho protein, premium chocho snacks, ready-to-eat chocho and functional extensions: pancake mix, quinoa cereal and freeze-dried fruits.</p>
           </div>
           <div style="display:flex;justify-content:flex-end;">
             <a class="btn btn-ghost" 
    href="docs/inti-somos-2026-catalog.pdf" 
    download>
-  Solicitar portafolio completo
+  Request full portfolio
 </a>
           </div>
         </div>
@@ -1929,7 +1955,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>ADD</span>
+                <span>Add to cart</span>
               </button>
             </div>
           </article>
@@ -1964,7 +1990,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>ADD</span>
+                <span>Add to cart</span>
               </button>
             </div>
           </article>
@@ -1986,6 +2012,7 @@
               <span>12–24 months</span>
             </div>
             <div class="product-actions">
+              <select class="pack-select" aria-label="Select presentation"><option value="10G">10G</option><option value="20G">20G</option><option value="1KG">1KG</option><option value="2KG">2KG</option><option value="BULK">BULK</option></select>
               <div class="qty-control">
                 <button class="qty-btn" type="button" aria-label="Disminuir cantidad">−</button>
                 <span class="qty-value">1</span>
@@ -1997,7 +2024,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>ADD</span>
+                <span>Add to cart</span>
               </button>
             </div>
           </article>
@@ -2019,6 +2046,7 @@
               <span>Ready to eat</span>
             </div>
             <div class="product-actions">
+              <select class="pack-select" aria-label="Select presentation"><option value="30G">30G</option><option value="255G">255G</option></select>
               <div class="qty-control">
                 <button class="qty-btn" type="button" aria-label="Disminuir cantidad">−</button>
                 <span class="qty-value">1</span>
@@ -2030,7 +2058,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>ADD</span>
+                <span>Add to cart</span>
               </button>
             </div>
           </article>
@@ -2045,7 +2073,7 @@
               </div>
               <div class="product-price">Quote</div>
             </div>
-            <p>Freeze-dried chochos coated in chocolate: premium snack que combina base de chocho con sabor a chocolate en formato ready-to-eat.</p>
+            <p>Freeze-dried chochos coated in chocolate: premium snack that combines a chocho base with chocolate flavor in a ready-to-eat format.</p>
             <div class="product-meta">
               <span>Chocho base</span>
               <span>Chocolate coating</span>
@@ -2063,7 +2091,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>ADD</span>
+                <span>Add to cart</span>
               </button>
             </div>
           </article>
@@ -2085,6 +2113,7 @@
               <span>250g / 530g jars</span>
             </div>
             <div class="product-actions">
+              <select class="pack-select" aria-label="Select presentation"><option value="JAR 250G">JAR · 250G</option><option value="JAR 530G">JAR · 530G</option></select>
               <div class="qty-control">
                 <button class="qty-btn" type="button" aria-label="Disminuir cantidad">−</button>
                 <span class="qty-value">1</span>
@@ -2096,7 +2125,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>ADD</span>
+                <span>Add to cart</span>
               </button>
             </div>
           </article>
@@ -2111,7 +2140,7 @@
               </div>
               <div class="product-price">Quote</div>
             </div>
-            <p>Ready-to-prepare breakfast mix with quinoa, chocho and chocolate chips. Funciona como extensión de desayuno de la plataforma de chocho.</p>
+            <p>Ready-to-prepare breakfast mix with quinoa, chocho and chocolate chips. It works as a breakfast extension of the chocho platform.</p>
             <div class="product-meta">
               <span>Quinoa + Chocho</span>
               <span>Chocolate chips</span>
@@ -2129,7 +2158,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>ADD</span>
+                <span>Add to cart</span>
               </button>
             </div>
           </article>
@@ -2142,10 +2171,10 @@
         <div class="section-head reveal">
           <div>
             <div class="eyebrow">Leadership team</div>
-            <h2>Equipo directivo</h2>
+            <h2>Leadership team</h2>
           </div>
           <p>
-            Equipo enfocado en desarrollo de productos, operaciones y expansión internacional, con una visión clara: llevar el chocho ecuatoriano a nuevos mercados.
+            A team focused on product development, operations and international expansion, with a clear vision: bringing Ecuadorian chocho to new markets.
           </p>
         </div>
 
@@ -2157,7 +2186,7 @@
             <div class="team-info">
               <h3>Fernanda London</h3>
               <div class="team-role">Founder & Chief Executive Officer (CEO)</div>
-              <p>Responsable de la dirección global y el crecimiento estratégico, asegurando que nuestra propuesta de valor trascienda fronteras a través de alianzas sólidas y una gestión eficiente</p>
+              <p>Responsible for global direction and strategic growth, ensuring that our value proposition expands across borders through strong partnerships and efficient management.</p>
             </div>
           </article>
 
@@ -2168,7 +2197,7 @@
             <div class="team-info">
               <h3>Ximena Chungandro</h3>
               <div class="team-role">Global Operations Director</div>
-              <p>Es la arquitecta estratégica de estandarizar procesos y optimizar recursos en múltiples mercados, asegurando que la expansión global</p>
+              <p>Strategic architect for standardizing processes and optimizing resources across multiple markets, supporting global expansion.</p>
             </div>
           </article>
 
@@ -2179,7 +2208,7 @@
             <div class="team-info">
               <h3>Camila Ávila</h3>
               <div class="team-role">Director of Global Operations & Brand Development</div>
-              <p>Diseña y dirige la arquitectura integral del negocio.</p>
+              <p>Designs and leads the integrated business architecture.</p>
             </div>
           </article>
         </div>
@@ -2193,7 +2222,7 @@
             <div class="eyebrow">International reach</div>
             <h2>Andean-based food solutions</h2>
           </div>
-          <p>El portafolio está liderado por chocho y apoyado por ingredientes andinos complementarios, en formatos prácticos y shelf-stable para mercados modernos.</p>
+          <p>The portfolio is led by chocho and supported by complementary Andean ingredients in practical, shelf-stable formats for modern markets.</p>
         </div>
 
         <div class="cert-grid">
@@ -2220,8 +2249,8 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <div class="eyebrow" data-i18n="qualityEyebrow">Calidad y confianza</div>
-            <h2 data-i18n="qualityTitle">Confianza comercial para exportación</h2>
+            <div class="eyebrow" data-i18n="qualityEyebrow">Quality and trust</div>
+            <h2 data-i18n="qualityTitle">Commercial trust for export</h2>
           </div>
           <p data-i18n="qualityText">
             Esta sección está pensada para comunicar trazabilidad, controles, estándares y requisitos comerciales relevantes para compradores internacionales.
@@ -2231,18 +2260,18 @@
         <div class="cert-grid">
           <article class="card cert-card reveal">
             <div class="cert-icon">01</div>
-            <h3>Trazabilidad</h3>
-            <p>Comunica control de origen, cadena de valor clara y lectura profesional para compradores.</p>
+            <h3>Traceability</h3>
+            <p>Communicates origin control, a clear value chain and a professional message for buyers.</p>
           </article>
           <article class="card cert-card reveal">
             <div class="cert-icon">02</div>
-            <h3>Calidad premium</h3>
-            <p>Espacio ideal para certificaciones, estándares alimentarios o atributos comerciales relevantes.</p>
+            <h3>Premium quality</h3>
+            <p>Ideal space for certifications, food standards or relevant commercial attributes.</p>
           </article>
           <article class="card cert-card reveal">
             <div class="cert-icon">03</div>
-            <h3>Origen ecuatoriano</h3>
-            <p>Refuerza diferenciación territorial con una presencia visual más sólida y elegante.</p>
+            <h3>Ecuadorian origin</h3>
+            <p>Reinforces territorial differentiation with a stronger and more elegant visual presence.</p>
           </article>
         </div>
       </div>
@@ -2265,7 +2294,7 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <div class="eyebrow" data-i18n="contactEyebrow">Contacto</div>
+            <div class="eyebrow" data-i18n="contactEyebrow">Contact</div>
             <h2 data-i18n="contactTitle">Connect with INTI SOMOS</h2>
           </div>
           <p data-i18n="contactText">Category: Andean Foods. For commercial inquiries, contact Fernanda London directly.</p>
@@ -2273,20 +2302,20 @@
 
         <div class="contact-grid">
           <div class="card contact-card reveal">
-            <h3 data-i18n="formTitle">Solicita información</h3>
+            <h3 data-i18n="formTitle">Request information</h3>
             <p data-i18n="formText">Usa este formulario como primer filtro comercial o conéctalo después a Formspree, Netlify Forms o WhatsApp.</p>
             <form id="leadForm" action="https://formspree.io/f/TU_ENDPOINT" method="POST">
-              <input class="field" type="text" name="name" placeholder="Nombre" required />
-              <input class="field" type="email" name="email" placeholder="Correo electrónico" required />
-              <input class="field" type="text" name="company" placeholder="Empresa" />
-              <textarea class="field" name="message" placeholder="Cuéntanos qué producto te interesa" required></textarea>
-              <button class="btn btn-primary" type="submit" data-i18n="send">Enviar solicitud</button>
+              <input class="field" type="text" name="name" placeholder="Name" required />
+              <input class="field" type="email" name="email" placeholder="Email" required />
+              <input class="field" type="text" name="company" placeholder="Company" />
+              <textarea class="field" name="message" placeholder="Tell us which product interests you" required></textarea>
+              <button class="btn btn-primary" type="submit" data-i18n="send">Send request</button>
               <div id="formStatus" style="font-size:0.95rem;color:var(--muted);padding-top:6px;"></div>
             </form>
           </div>
 
           <div class="card contact-card reveal">
-            <h3 data-i18n="channelsTitle">Canales directos</h3>
+            <h3 data-i18n="channelsTitle">Direct channels</h3>
             <p data-i18n="channelsText">Refuerza confianza con rutas claras de contacto y un tono más institucional.</p>
             <ul class="contact-list">
               <li>
@@ -2298,12 +2327,12 @@
                 <strong><a href="mailto:fernanda@intisomos.com">fernanda@intisomos.com</a></strong>
               </li>
               <li>
-                <small data-i18n="location">Ubicación</small>
+                <small data-i18n="location">Location</small>
                 <strong data-i18n="locationValue">Ecuador</strong>
               </li>
               <li>
-                <small data-i18n="hours">Horario</small>
-                <strong data-i18n="hoursValue">Lunes a Viernes · 09:00 - 18:00</strong>
+                <small data-i18n="hours">Hours</small>
+                <strong data-i18n="hoursValue">Monday to Friday · 09:00 - 18:00</strong>
               </li>
             </ul>
             <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;">
@@ -2376,10 +2405,10 @@
       </div>
       <div>
         <div class="footer-links">
-          <a href="#productos" data-i18n="navProducts">Productos</a>
-          <a href="#equipo" data-i18n="navTeam">Equipo</a>
-          <a href="#certificaciones" data-i18n="navQuality">Calidad</a>
-          <a href="#contacto" data-i18n="navContact">Contacto</a>
+          <a href="#productos" data-i18n="navProducts">Products</a>
+          <a href="#equipo" data-i18n="navTeam">Team</a>
+          <a href="#certificaciones" data-i18n="navQuality">Quality</a>
+          <a href="#contacto" data-i18n="navContact">Contact</a>
         </div>
         <div class="footer-note">© 2026 INTI SOMOS. All rights reserved.</div>
       </div>
@@ -2394,10 +2423,10 @@
         <div class="eyebrow" style="margin-bottom:10px;">Cart</div>
         <h3>Your cart</h3>
       </div>
-      <button class="cart-close" id="cartClose" type="button" aria-label="Cerrar carrito">✕</button>
+      <button class="cart-close" id="cartClose" type="button" aria-label="Close cart">✕</button>
     </div>
     <div class="cart-body" id="cartItems">
-      <div class="cart-empty" id="cartEmpty">Aún no has agregado productos.</div>
+      <div class="cart-empty" id="cartEmpty">Your cart is empty.</div>
     </div>
     <div class="cart-footer">
       <div class="cart-total">
@@ -2416,26 +2445,26 @@
       es: {
         navHome: 'Inicio',
         navProducts: 'Productos',
-        navTeam: 'Equipo',
+        navTeam: 'Team',
         navQuality: 'Calidad',
         navContact: 'Contacto',
         requestInfo: 'Solicitar información',
         heroEyebrow: 'Ecuador · Chocho-Based Andean Foods',
         heroTagline: 'Chocho-based plant protein from the Andes',
-        heroText: 'Un portafolio enfocado en chocho: ingrediente andino ancestral transformado en soluciones modernas, shelf-stable, para retail y food service.',
+        heroText: 'We develop products based on chocho — an Andean legume — adapted to retail, food service and international brand opportunities.',
         heroBtnPrimary: 'Explorar portafolio',
         heroBtnSecondary: 'Conoce el equipo',
-        stat1: 'Hero ingredient',
+        stat1: 'Ingrediente principal',
         stat2: 'Enfoque comercial',
         stat3: 'Mercados',
         stat4: 'Origen',
         productsEyebrow: 'Portafolio',
         productsTitle: 'Chocho-led product portfolio',
-        productsText: 'Portafolio liderado por chocho y respaldado por ingredientes andinos complementarios en formatos prácticos y shelf-stable.',
+        productsText: 'A chocho-led portfolio supported by complementary Andean ingredients in practical, shelf-stable formats.',
         collectionPill: 'Colección destacada',
-        collectionTitle: 'Andean-based food solutions',
-        collectionText: 'Una colección pensada para retail, food service, convenience foods y desarrollo de marca privada.',
-        collectionBtn: 'Solicitar portafolio completo',
+        collectionTitle: 'Soluciones alimentarias de origen andino',
+        collectionText: 'Una colección pensada para retail, food service, alimentos de conveniencia y desarrollo de marca privada.',
+        collectionBtn: 'Request full portfolio',
         p1Pill: 'Proteína vegetal',
         p1Title: 'Freeze Dried Chochos',
         p1Text: 'Ingrediente andino transformado en un snack moderno listo para retail internacional y categorías de alto crecimiento.',
@@ -2444,13 +2473,13 @@
         p1m3: 'Export ready',
         p2Pill: 'Fruta natural',
         p2Title: 'Freeze Dried Fruits',
-        p2Text: 'Complementary product line: lightweight, practical and suitable for snacks, cereals, yogurts, baking and toppings.',
+        p2Text: 'Línea complementaria de frutas: liviana, práctica e ideal para snacks, cereales, yogures, repostería y toppings.',
         p2m1: 'Natural sweetness',
         p2m2: 'Long shelf life',
         p2m3: 'Premium retail',
         p3Pill: 'Cereales andinos',
         p3Title: 'Quinoa Cereal',
-        p3Text: 'Complementary Andean cereal alternative made with quinoa. Supports the wider portfolio while chocho remains the hero plant-protein platform.',
+        p3Text: 'Alternativa de cereal andino elaborada con quinua. Complementa el portafolio mientras el chocho se mantiene como la plataforma principal de proteína vegetal.',
         p3m1: 'Light texture',
         p3m2: 'Functional food',
         p3m3: 'Modern format',
@@ -2466,7 +2495,7 @@
         ctaBtn: 'Hablemos',
         contactEyebrow: 'Contacto',
         contactTitle: 'Conecta con potenciales compradores',
-        contactText: 'Category: Andean Foods. For commercial inquiries, contact Fernanda London directly.',
+        contactText: 'Categoría: alimentos andinos. Para consultas comerciales, contacta directamente a Fernanda London.',
         formTitle: 'Solicita información',
         formText: 'Usa este formulario como primer filtro comercial o conéctalo después a Formspree, Netlify Forms o WhatsApp.',
         send: 'Enviar solicitud',
@@ -2478,12 +2507,12 @@
         hours: 'Horario',
         locationValue: 'Ecuador',
         hoursValue: 'Lunes a Viernes · 09:00 - 18:00',
-        footerText: 'Premium exports from Ecuador to the world.'
+        footerText: 'Exportaciones premium desde Ecuador al mundo.'
       },
       en: {
         navHome: 'Home',
         navProducts: 'Products',
-        navTeam: 'Equipo',
+        navTeam: 'Team',
         navQuality: 'Quality',
         navContact: 'Contact',
         requestInfo: 'Request information',
@@ -2498,7 +2527,7 @@
         stat4: 'Origin',
         productsEyebrow: 'Portfolio',
         productsTitle: 'Chocho-led product portfolio',
-        productsText: 'Portafolio liderado por chocho y respaldado por ingredientes andinos complementarios en formatos prácticos y shelf-stable.',
+        productsText: 'A chocho-led portfolio supported by complementary Andean ingredients in practical, shelf-stable formats.',
         collectionPill: 'Collection spotlight',
         collectionTitle: 'Andean-based food solutions',
         collectionText: 'A collection designed for retail, food service, convenience foods and private label development.',
@@ -2621,6 +2650,83 @@
         if (t[key]) el.textContent = t[key];
       });
 
+      const staticText = {
+        es: {
+          'Brand focus · 2026 catalog': 'Enfoque de marca · Catálogo 2026',
+          'Chocho is the center of the portfolio.': 'El chocho es el centro del portafolio.',
+          'INTI SOMOS is positioned around chocho, an ancestral Andean plant-protein ingredient. Quinoa, cacao and fruits complement the portfolio, while chocho leads the commercial story.': 'INTI SOMOS está posicionado alrededor del chocho, un ingrediente andino ancestral de proteína vegetal. La quinua, el cacao y las frutas complementan el portafolio, mientras el chocho lidera la historia comercial.',
+          'Plant-based protein': 'Proteína vegetal',
+          'Chocho provides a clear nutritional anchor for the catalog.': 'El chocho entrega un ancla nutricional clara para el catálogo.',
+          'Multiple formats': 'Múltiples formatos',
+          'Freeze-dried chochos, puffs, chocolate-covered chochos, chili jars and pancake mix create a scalable product family.': 'Chochos liofilizados, puffs, chochos cubiertos de chocolate, frascos con ají y pancake mix crean una familia de productos escalable.',
+          'Retail + food service': 'Retail + food service',
+          'Ready-to-eat, breakfast, snack and gourmet formats for commercial conversations.': 'Formatos ready-to-eat, desayuno, snack y gourmet para conversaciones comerciales.',
+          'Hero ingredient · Andean plant-based protein': 'Ingrediente principal · Proteína vegetal andina',
+          'Chocho Plant Protein': 'Proteína vegetal de chocho',
+          'An ancestral Andean protein source and the foundation of the INTI SOMOS portfolio. In the catalog, freeze-dried chocho is presented as high protein, gluten-free, Andean origin and zero cholesterol.': 'Fuente ancestral de proteína andina y base del portafolio INTI SOMOS. En el catálogo, el chocho liofilizado se presenta como alto en proteína, libre de gluten, de origen andino y con cero colesterol.',
+          'Buyer anchor': 'Ancla comercial',
+          'Chocho explains the nutritional difference and supports the rest of the portfolio.': 'El chocho explica la diferencia nutricional y respalda el resto del portafolio.',
+          'Portfolio base': 'Base del portafolio',
+          'Category: protein. Base: chocho. Type: plant. Origin: Ecuador.': 'Categoría: proteína. Base: chocho. Tipo: vegetal. Origen: Ecuador.',
+          'Nutritional comparison': 'Comparativo nutricional',
+          'The catalog highlights chocho for protein, fiber and calcium with zero cholesterol according to the nutritional comparison.': 'El catálogo destaca el chocho por su proteína, fibra y calcio, con cero colesterol según el comparativo nutricional.',
+          'High protein snack': 'Snack alto en proteína',
+          'Chocho Puffs': 'Puffs de chocho',
+          'Hero retail snack: crunchy, ready-to-eat y basado en chocho andino. Cada serving aporta 8g de plant-based protein, zero cholesterol, 3g fiber y 130 kcal.': 'Snack principal para retail: crocante, listo para consumir y basado en chocho andino. Cada porción aporta 8 g de proteína vegetal, cero colesterol, 3 g de fibra y 130 kcal.',
+          'Natural fruit': 'Fruta natural',
+          'Andean cereals': 'Cereales andinos',
+          'Premium snack': 'Snack premium',
+          'Chocolate Covered Chochos': 'Chochos cubiertos de chocolate',
+          'Freeze-dried chochos coated in chocolate: premium snack that combines a chocho base with chocolate flavor in a ready-to-eat format.': 'Chochos liofilizados cubiertos de chocolate: snack premium que combina una base de chocho con sabor a chocolate en formato listo para consumir.',
+          'Gourmet ready to eat': 'Gourmet listo para consumir',
+          'Chocho Snack with Chili': 'Snack de chocho con ají',
+          'Traditional chocho with chili, reinterpreted for modern consumption. Ready-to-eat gourmet format suitable for retail and international food service. Available in 250g or 530g jars.': 'Chocho tradicional con ají, reinterpretado para el consumo moderno. Formato gourmet listo para consumir, adecuado para retail y food service internacional. Disponible en frascos de 250 g o 530 g.',
+          'Breakfast mix': 'Mezcla para desayuno',
+          'Pancake Mix': 'Mezcla para pancakes',
+          'Ready-to-prepare breakfast mix with quinoa, chocho and chocolate chips. It works as a breakfast extension of the chocho platform.': 'Mezcla de desayuno lista para preparar con quinua, chocho y chispas de chocolate. Funciona como extensión de desayuno de la plataforma de chocho.',
+          'Leadership team': 'Equipo directivo',
+          'A team focused on product development, operations and international expansion, with a clear vision: bringing Ecuadorian chocho to new markets.': 'Equipo enfocado en desarrollo de productos, operaciones y expansión internacional, con una visión clara: llevar el chocho ecuatoriano a nuevos mercados.',
+          'International reach': 'Alcance internacional',
+          'Andean-based food solutions': 'Soluciones alimentarias de origen andino',
+          'The portfolio is led by chocho and supported by complementary Andean ingredients in practical, shelf-stable formats for modern markets.': 'El portafolio está liderado por chocho y respaldado por ingredientes andinos complementarios en formatos prácticos y shelf-stable para mercados modernos.',
+          'Chocho protein': 'Proteína de chocho',
+          'Premium chocho snack': 'Snack premium de chocho',
+          'Ready-to-eat chocho': 'Chocho listo para consumir',
+          'Traceability': 'Trazabilidad',
+          'Premium quality': 'Calidad premium',
+          'Ecuadorian origin': 'Origen ecuatoriano',
+          'Add to cart': 'Añadir al carrito',
+          'Cart': 'Carrito',
+          'Your cart': 'Tu carrito',
+          'Your cart is empty.': 'Tu carrito está vacío.',
+          'Request quote': 'Solicitar cotización',
+          'Request': 'Solicitud',
+          'Quote': 'Cotizar',
+          'Quote request': 'Solicitud de cotización',
+          'Commercial terms, pricing and shipping are confirmed by INTI SOMOS.': 'Términos comerciales, precios y envío se confirman directamente con INTI SOMOS.',
+          'Remove': 'Quitar'
+        }
+      };
+
+      document.querySelectorAll('body *').forEach(el => {
+        if (el.children.length > 0 || el.closest('script, style') || el.hasAttribute('data-i18n')) return;
+        if (!el.dataset.enText) el.dataset.enText = el.textContent.trim();
+        const original = el.dataset.enText;
+        if (lang === 'es' && staticText.es[original]) {
+          el.textContent = staticText.es[original];
+        } else if (lang === 'en') {
+          el.textContent = original;
+        }
+      });
+
+      document.querySelectorAll('.cart-trigger').forEach(el => el.setAttribute('aria-label', lang === 'es' ? 'Abrir carrito' : 'Open cart'));
+      document.querySelectorAll('.pack-select').forEach(el => el.setAttribute('aria-label', lang === 'es' ? 'Seleccionar presentación' : 'Select presentation'));
+      document.querySelectorAll('.qty-control').forEach(control => {
+        const buttons = control.querySelectorAll('.qty-btn');
+        if (buttons[0]) buttons[0].setAttribute('aria-label', lang === 'es' ? 'Disminuir cantidad' : 'Decrease quantity');
+        if (buttons[1]) buttons[1].setAttribute('aria-label', lang === 'es' ? 'Aumentar cantidad' : 'Increase quantity');
+      });
+
       const placeholders = {
         'input[name="name"]': lang === 'es' ? 'Nombre' : 'Name',
         'input[name="email"]': lang === 'es' ? 'Correo electrónico' : 'Email',
@@ -2704,7 +2810,7 @@
               <span>${item.qty}</span>
               <button class="cart-mini-btn" type="button" data-cart-plus="${index}">+</button>
             </div>
-            <button class="cart-remove" type="button" data-cart-remove="${index}">Quitar</button>
+            <button class="cart-remove" type="button" data-cart-remove="${index}">Remove</button>
           </div>
         `;
         cartItems.appendChild(el);
@@ -2746,12 +2852,12 @@
         openCart();
         return;
       }
-      const lines = cartState.map(item => `- ${item.name} x${item.qty}`).join('%0A');
+      const lines = cartState.map(item => `- ${item.name} | ${item.pack} | x${item.qty}`).join('\n');
       const intro = lang === 'es'
         ? 'Hola, quiero solicitar estos productos:%0A'
         : 'Hello, I would like to request these products:%0A';
       const total = `${lang === 'es' ? '%0ATotal estimado: ' : '%0AEstimated total: '}${encodeURIComponent(formatCurrency(cartState.reduce((sum, item) => sum + item.price * item.qty, 0)))}`;
-      window.open(`https://wa.me/${phone}?text=${intro}${lines}${total}`, '_blank');
+      window.open(`https://wa.me/${phone}?text=${encodeURIComponent((lang === 'es' ? 'Hola, quiero solicitar estos productos:\n' : 'Hello, I would like to request these products:\n') + lines + '\n' + (lang === 'es' ? 'Total estimado: ' : 'Estimated total: ') + formatCurrency(cartState.reduce((sum, item) => sum + item.price * item.qty, 0)))}`, '_blank');
     });
 
     document.querySelectorAll('.product-actions').forEach(control => {
@@ -2761,6 +2867,7 @@
       const plus = buttons[1];
       const valueEl = control.querySelector('.qty-value');
       const addBtn = control.querySelector('.add-cart-btn');
+      const packSelect = control.querySelector('.pack-select');
 
       let qty = 1;
       let animTimeout;
@@ -2798,10 +2905,11 @@
 
         const name = card.dataset.productName || 'Product';
         const price = Number(card.dataset.productPrice || '0');
-        const pack = card.dataset.productPack || '';
+        const selectedPack = packSelect ? packSelect.value : '';
+        const pack = selectedPack || card.dataset.productPack || '';
         const image = card.dataset.productImage || '';
 
-        const existing = cartState.find(item => item.name === name);
+        const existing = cartState.find(item => item.name === name && item.pack === pack);
         if (existing) {
           existing.qty += qty;
         } else {
