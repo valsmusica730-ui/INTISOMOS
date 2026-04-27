@@ -1764,6 +1764,198 @@
         bottom: 16px;
       }
     }
+
+
+    /* Product card + cart action refinements */
+    .products-grid {
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      padding: 22px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,247,241,0.94));
+      border: 1px solid rgba(13,35,69,0.09);
+      box-shadow: 0 18px 42px rgba(13,35,69,0.09);
+    }
+
+    .product-media {
+      aspect-ratio: 4 / 3;
+      border-radius: 22px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.45);
+    }
+
+    .product-topline {
+      gap: 10px;
+    }
+
+    .product-topline h3 {
+      font-size: clamp(2rem, 2.5vw, 2.55rem);
+      line-height: 0.98;
+    }
+
+    .product-card p {
+      min-height: 74px;
+    }
+
+    .product-meta {
+      min-height: 62px;
+      align-content: start;
+    }
+
+    .product-actions {
+      display: grid;
+      grid-template-columns: 128px minmax(0, 1fr);
+      gap: 12px;
+      align-items: stretch;
+      padding-top: 14px;
+      border-top: 1px solid rgba(13,35,69,0.08);
+    }
+
+    .product-actions:has(.pack-select) {
+      grid-template-columns: minmax(0, 1fr) 128px;
+    }
+
+    .product-actions:has(.pack-select) .pack-select {
+      grid-column: 1 / -1;
+    }
+
+    .product-actions:has(.pack-select) .qty-control {
+      grid-column: 1 / 2;
+    }
+
+    .product-actions:has(.pack-select) .add-cart-btn {
+      grid-column: 2 / 3;
+    }
+
+    .pack-select,
+    .qty-control,
+    .add-cart-btn {
+      min-height: 54px;
+    }
+
+    .pack-select {
+      border-radius: 16px;
+      padding: 0 16px;
+      background: #ffffff;
+      box-shadow: 0 8px 18px rgba(13,35,69,0.04);
+    }
+
+    .qty-control {
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 0 8px 18px rgba(13,35,69,0.04);
+    }
+
+    .add-cart-btn {
+      min-width: 0;
+      padding: 0 16px;
+      border-radius: 18px;
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      line-height: 1.15;
+      white-space: normal;
+      text-align: center;
+      box-shadow: 0 14px 26px rgba(200,155,92,0.24);
+    }
+
+    .add-cart-btn .bag-icon {
+      width: 19px;
+      height: 19px;
+    }
+
+    .add-cart-btn span {
+      display: inline-block;
+    }
+
+    @media (max-width: 640px) {
+      .product-card {
+        padding: 18px;
+      }
+
+      .product-card p,
+      .product-meta {
+        min-height: 0;
+      }
+
+      .product-actions,
+      .product-actions:has(.pack-select) {
+        grid-template-columns: 1fr;
+      }
+
+      .product-actions:has(.pack-select) .pack-select,
+      .product-actions:has(.pack-select) .qty-control,
+      .product-actions:has(.pack-select) .add-cart-btn {
+        grid-column: 1 / -1;
+      }
+
+      .add-cart-btn {
+        width: 100%;
+        white-space: nowrap;
+      }
+    }
+
+
+    /* FINAL FIX: stable product controls + cart button */
+    .product-actions {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      align-items: stretch;
+    }
+    .product-actions .pack-select {
+      grid-column: 1 / -1;
+      width: 100%;
+      height: 54px;
+      border: 1px solid rgba(13,35,69,0.14);
+      border-radius: 16px;
+      padding: 0 16px;
+      background: #ffffff;
+      color: var(--navy);
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .product-actions .qty-control {
+      width: 100%;
+      min-width: 0;
+      height: 54px;
+    }
+    .product-actions .add-cart-btn {
+      width: 100%;
+      min-width: 0;
+      height: 54px;
+      min-height: 54px;
+      padding: 0 18px;
+      display: inline-flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 10px;
+      white-space: nowrap !important;
+      text-align: center;
+      line-height: 1 !important;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .product-actions .add-cart-btn span {
+      display: inline-block;
+      white-space: nowrap;
+      line-height: 1;
+    }
+    @media (max-width: 640px) {
+      .product-actions,
+      .product-actions:has(.pack-select) {
+        grid-template-columns: 1fr;
+      }
+      .product-actions .pack-select,
+      .product-actions .qty-control,
+      .product-actions .add-cart-btn {
+        grid-column: 1 / -1;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1955,7 +2147,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>Add to cart</span>
+                <span>Añadir al carrito</span>
               </button>
             </div>
           </article>
@@ -1990,7 +2182,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>Add to cart</span>
+                <span>Añadir al carrito</span>
               </button>
             </div>
           </article>
@@ -2024,7 +2216,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>Add to cart</span>
+                <span>Añadir al carrito</span>
               </button>
             </div>
           </article>
@@ -2058,7 +2250,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>Add to cart</span>
+                <span>Añadir al carrito</span>
               </button>
             </div>
           </article>
@@ -2091,7 +2283,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>Add to cart</span>
+                <span>Añadir al carrito</span>
               </button>
             </div>
           </article>
@@ -2125,7 +2317,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>Add to cart</span>
+                <span>Añadir al carrito</span>
               </button>
             </div>
           </article>
@@ -2158,7 +2350,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>Add to cart</span>
+                <span>Añadir al carrito</span>
               </button>
             </div>
           </article>
@@ -2741,7 +2933,7 @@
 
       langButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
       localStorage.setItem('intiLang', lang);
-      updateWhatsLinks(lang);
+      if (typeof updateWhatsLinks === 'function') { try { updateWhatsLinks(lang); } catch (error) {} }
     }
 
     langButtons.forEach(btn => {
@@ -2763,7 +2955,7 @@
     const cartState = [];
     const phone = '16263999558';
 
-    const formatCurrency = (value) => 'Quote request';
+    const formatCurrency = (value) => (localStorage.getItem('intiLang') || 'es') === 'es' ? 'Solicitud de cotización' : 'Quote request';
 
     const openCart = () => {
       cartPanel?.classList.add('open');
@@ -2810,7 +3002,7 @@
               <span>${item.qty}</span>
               <button class="cart-mini-btn" type="button" data-cart-plus="${index}">+</button>
             </div>
-            <button class="cart-remove" type="button" data-cart-remove="${index}">Remove</button>
+            <button class="cart-remove" type="button" data-cart-remove="${index}">Quitar</button>
           </div>
         `;
         cartItems.appendChild(el);
@@ -2860,54 +3052,41 @@
       window.open(`https://wa.me/${phone}?text=${encodeURIComponent((lang === 'es' ? 'Hola, quiero solicitar estos productos:\n' : 'Hello, I would like to request these products:\n') + lines + '\n' + (lang === 'es' ? 'Total estimado: ' : 'Estimated total: ') + formatCurrency(cartState.reduce((sum, item) => sum + item.price * item.qty, 0)))}`, '_blank');
     });
 
-    document.querySelectorAll('.product-actions').forEach(control => {
-      const card = control.closest('.product-card');
-      const buttons = control.querySelectorAll('.qty-btn');
-      const minus = buttons[0];
-      const plus = buttons[1];
-      const valueEl = control.querySelector('.qty-value');
-      const addBtn = control.querySelector('.add-cart-btn');
-      const packSelect = control.querySelector('.pack-select');
+    document.addEventListener('click', (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLElement)) return;
 
-      let qty = 1;
-      let animTimeout;
+      const qtyButton = target.closest('.qty-btn');
+      if (qtyButton) {
+        const control = qtyButton.closest('.product-actions');
+        const valueEl = control?.querySelector('.qty-value');
+        if (!control || !valueEl) return;
 
-      const animateQty = () => {
+        const buttons = Array.from(control.querySelectorAll('.qty-btn'));
+        const currentQty = Number(valueEl.textContent || '1') || 1;
+        const isMinus = qtyButton === buttons[0];
+        const nextQty = isMinus ? Math.max(1, currentQty - 1) : currentQty + 1;
+
+        valueEl.textContent = String(nextQty);
         valueEl.classList.remove('is-changing');
         void valueEl.offsetWidth;
         valueEl.classList.add('is-changing');
-        clearTimeout(animTimeout);
-        animTimeout = setTimeout(() => {
-          valueEl.classList.remove('is-changing');
-        }, 220);
-      };
+        window.setTimeout(() => valueEl.classList.remove('is-changing'), 220);
+        return;
+      }
 
-      const renderQty = () => {
-        valueEl.textContent = qty;
-        animateQty();
-      };
+      const addBtn = target.closest('.add-cart-btn');
+      if (addBtn) {
+        const control = addBtn.closest('.product-actions');
+        const card = addBtn.closest('.product-card');
+        if (!control || !card) return;
 
-      minus?.addEventListener('click', () => {
-        const nextQty = Math.max(1, qty - 1);
-        if (nextQty !== qty) {
-          qty = nextQty;
-          renderQty();
-        }
-      });
-
-      plus?.addEventListener('click', () => {
-        qty += 1;
-        renderQty();
-      });
-
-      addBtn?.addEventListener('click', () => {
-        if (!card) return;
-
-        const name = card.dataset.productName || 'Product';
+        const qty = Math.max(1, Number(control.querySelector('.qty-value')?.textContent || '1') || 1);
+        const packSelect = control.querySelector('.pack-select');
+        const name = card.dataset.productName || card.querySelector('h3')?.textContent?.trim() || 'Product';
         const price = Number(card.dataset.productPrice || '0');
-        const selectedPack = packSelect ? packSelect.value : '';
-        const pack = selectedPack || card.dataset.productPack || '';
-        const image = card.dataset.productImage || '';
+        const pack = (packSelect && packSelect.value) ? packSelect.value : (card.dataset.productPack || card.querySelector('.product-pack')?.textContent?.trim() || '');
+        const image = card.dataset.productImage || card.querySelector('img')?.getAttribute('src') || '';
 
         const existing = cartState.find(item => item.name === name && item.pack === pack);
         if (existing) {
@@ -2919,13 +3098,15 @@
         renderCart();
         openCart();
 
-        const span = addBtn.querySelector('span');
-        const original = span.textContent;
-        span.textContent = `ADDED ${qty}`;
-        setTimeout(() => {
-          span.textContent = original;
-        }, 1400);
-      });
+        const label = addBtn.querySelector('span');
+        if (label) {
+          const original = label.textContent;
+          label.textContent = `${(localStorage.getItem('intiLang') || 'es') === 'es' ? 'Añadido' : 'Added'} ${qty}`;
+          window.setTimeout(() => {
+            label.textContent = original || ((localStorage.getItem('intiLang') || 'es') === 'es' ? 'Añadir al carrito' : 'Add to cart');
+          }, 1200);
+        }
+      }
     });
 
     renderCart();
