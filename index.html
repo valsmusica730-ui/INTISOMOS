@@ -1985,8 +1985,6 @@
     .product-actions .pack-select {grid-column:1/-1;min-height:48px !important;height:48px !important;border-radius:999px !important;background:#fff;font-size:0.78rem;}
     .product-actions .qty-control {height:48px !important;min-height:48px !important;border-radius:999px !important;box-shadow:none;}
     .product-actions .add-cart-btn {height:48px !important;min-height:48px !important;border-radius:999px !important;background:linear-gradient(135deg,var(--navy),var(--navy-2)) !important;color:#fff !important;box-shadow:0 12px 28px rgba(13,35,69,0.18) !important;font-size:0.66rem !important;letter-spacing:0.10em !important;padding:0 12px !important;}
-    .quick-quote-btn {grid-column:1/-1;min-height:46px;border:1px solid rgba(200,155,92,0.55);border-radius:999px;background:rgba(200,155,92,0.10);color:var(--navy);cursor:pointer;font-weight:900;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;transition:all 0.25s ease;}
-    .quick-quote-btn:hover {background:linear-gradient(135deg,#d1b078,#c89b5c);transform:translateY(-1px);}
     .product-card.is-hidden {display:none !important;}
     .cart-checkout {background:linear-gradient(135deg,#25D366,#128C7E) !important;color:#fff !important;}
     #equipo {padding:86px 0;}
@@ -2020,7 +2018,6 @@
     .product-card>p{position:static!important;margin:0!important;padding:0 22px 14px!important;min-height:0!important;color:rgba(36,48,65,.72)!important;font-size:.94rem!important;line-height:1.55!important;display:block!important;overflow:visible!important;-webkit-line-clamp:unset!important;-webkit-box-orient:unset!important}
     .product-meta{display:flex!important;flex-wrap:wrap!important;gap:8px!important;min-height:0!important;padding:0 22px 14px!important}.product-meta span{padding:7px 10px!important;border-radius:999px!important;background:rgba(13,35,69,.045)!important;border:1px solid rgba(13,35,69,.07)!important;color:rgba(36,48,65,.72)!important;font-size:.68rem!important;font-weight:700!important}
     .product-detail-list{display:grid!important;gap:8px!important;margin:0 22px 18px!important;padding:14px!important;border-radius:18px!important;background:rgba(248,244,236,.80)!important;border:1px solid rgba(13,35,69,.07)!important}.product-detail-row{display:flex!important;justify-content:space-between!important;gap:16px!important;align-items:baseline!important;padding-bottom:8px!important;border-bottom:1px solid rgba(13,35,69,.07)!important}.product-detail-row:last-child{padding-bottom:0!important;border-bottom:0!important}.detail-label{color:var(--gold)!important;text-transform:uppercase!important;letter-spacing:.14em!important;font-size:.62rem!important;font-weight:900!important;white-space:nowrap!important}.product-detail-row strong{color:var(--navy)!important;font-size:.82rem!important;line-height:1.3!important;text-align:right!important}
-    .product-actions{position:static!important;z-index:auto!important;margin:auto 22px 22px!important;padding:16px 0 0!important;border-top:1px solid rgba(13,35,69,.08)!important;border-radius:0!important;background:transparent!important;backdrop-filter:none!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:10px!important}.product-actions .pack-select{grid-column:1/-1!important;min-height:48px!important;height:48px!important;border-radius:16px!important;background:#fff!important;font-size:.82rem!important;box-shadow:0 8px 18px rgba(13,35,69,.04)!important}.product-actions .qty-control,.product-actions .add-cart-btn,.quick-quote-btn{min-height:50px!important;height:50px!important;border-radius:16px!important}.product-actions .add-cart-btn{background:linear-gradient(135deg,var(--navy),var(--navy-2))!important;color:#fff!important;box-shadow:0 12px 28px rgba(13,35,69,.18)!important;font-size:.66rem!important;letter-spacing:.09em!important;padding:0 12px!important;white-space:normal!important}.quick-quote-btn{grid-column:1/-1!important;border:1px solid rgba(200,155,92,.52)!important;background:rgba(200,155,92,.12)!important;color:var(--navy)!important;font-weight:900!important;letter-spacing:.12em!important;text-transform:uppercase!important}.quick-quote-btn:hover{background:linear-gradient(135deg,#d1b078,#c89b5c)!important;transform:translateY(-1px)!important}
     @media(max-width:640px){.products-grid{grid-template-columns:1fr!important}.product-topline{grid-template-columns:1fr!important}.product-price{width:fit-content!important}.product-actions,.product-actions:has(.pack-select){grid-template-columns:1fr!important}.quick-quote-btn,.product-actions .pack-select,.product-actions .qty-control,.product-actions .add-cart-btn{grid-column:1/-1!important}}
 
   
@@ -2170,6 +2167,147 @@
       }
       #equipo .team-info h3 {
         font-size: 1rem !important;
+      }
+    }
+
+/* FINAL CLEAN PRODUCT ACTIONS: un solo CTA por producto */
+.product-actions {
+  grid-template-columns: minmax(118px, 140px) minmax(0, 1fr) !important;
+  gap: 12px !important;
+  padding-top: 14px !important;
+  border-top: 1px solid rgba(13,35,69,0.08) !important;
+}
+.product-actions .pack-select {
+  grid-column: 1 / -1 !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  border-radius: 16px !important;
+}
+.product-actions .qty-control {
+  height: 52px !important;
+  min-height: 52px !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  background: #fff !important;
+}
+.product-actions .add-cart-btn {
+  height: 52px !important;
+  min-height: 52px !important;
+  border-radius: 16px !important;
+  background: linear-gradient(135deg, var(--navy), var(--navy-2)) !important;
+  color: #fff !important;
+  box-shadow: 0 14px 28px rgba(13,35,69,0.18) !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.10em !important;
+  padding: 0 14px !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+}
+.product-actions .add-cart-btn.is-added {
+  background: linear-gradient(135deg, #d1b078, #c89b5c) !important;
+  color: var(--navy) !important;
+  transform: translateY(-1px) scale(1.01);
+}
+.product-card.cart-pulse {
+  box-shadow: 0 26px 62px rgba(13,35,69,0.16), 0 0 0 1px rgba(200,155,92,0.34) !important;
+}
+@media (max-width: 640px) {
+  .product-actions,
+  .product-actions:has(.pack-select) {
+    grid-template-columns: 1fr !important;
+  }
+  .product-actions .pack-select,
+  .product-actions .qty-control,
+  .product-actions .add-cart-btn {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+    /* FINAL UI POLISH: productos limpios, sin boton WhatsApp por tarjeta */
+    #productos .product-actions {
+      display: grid !important;
+      grid-template-columns: minmax(118px, 140px) minmax(0, 1fr) !important;
+      gap: 12px !important;
+      align-items: stretch !important;
+      margin-top: auto !important;
+      padding-top: 14px !important;
+      border-top: 1px solid rgba(13,35,69,0.08) !important;
+      background: transparent !important;
+    }
+
+    #productos .product-actions .pack-select {
+      grid-column: 1 / -1 !important;
+      width: 100% !important;
+      height: 48px !important;
+      min-height: 48px !important;
+      border-radius: 16px !important;
+      border: 1px solid rgba(13,35,69,0.12) !important;
+      background: rgba(255,255,255,0.96) !important;
+      color: var(--navy) !important;
+      font-weight: 700 !important;
+      font-size: 0.82rem !important;
+      padding: 0 14px !important;
+      box-shadow: 0 8px 18px rgba(13,35,69,0.04) !important;
+    }
+
+    #productos .product-actions .qty-control {
+      height: 52px !important;
+      min-height: 52px !important;
+      border-radius: 16px !important;
+      overflow: hidden !important;
+      background: #fff !important;
+      border: 1px solid rgba(13,35,69,0.10) !important;
+      box-shadow: 0 8px 18px rgba(13,35,69,0.04) !important;
+    }
+
+    #productos .product-actions .add-cart-btn {
+      height: 52px !important;
+      min-height: 52px !important;
+      border-radius: 16px !important;
+      background: linear-gradient(135deg, var(--navy), var(--navy-2)) !important;
+      color: #fff !important;
+      box-shadow: 0 14px 28px rgba(13,35,69,0.18) !important;
+      font-size: 0.76rem !important;
+      letter-spacing: 0.10em !important;
+      padding: 0 16px !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+    }
+
+    #productos .product-actions .add-cart-btn:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 18px 34px rgba(13,35,69,0.22) !important;
+    }
+
+    #productos .product-actions .add-cart-btn.is-added {
+      background: linear-gradient(135deg, #d1b078, #c89b5c) !important;
+      color: var(--navy) !important;
+      transform: translateY(-1px) scale(1.01) !important;
+    }
+
+    #productos .product-actions .bag-icon {
+      width: 17px !important;
+      height: 17px !important;
+    }
+
+    #productos .quick-quote-btn,
+    #productos .btn-whatsapp {
+      display: none !important;
+    }
+
+    #productos .product-card.cart-pulse {
+      box-shadow: 0 26px 62px rgba(13,35,69,0.16), 0 0 0 1px rgba(200,155,92,0.34) !important;
+    }
+
+    @media (max-width: 640px) {
+      #productos .product-actions,
+      #productos .product-actions:has(.pack-select) {
+        grid-template-columns: 1fr !important;
+      }
+      #productos .product-actions .pack-select,
+      #productos .product-actions .qty-control,
+      #productos .product-actions .add-cart-btn {
+        grid-column: 1 / -1 !important;
       }
     }
 
@@ -2375,7 +2513,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>Añadir al carrito</span>
+                <span>Añadir</span>
               </button>
             </div>
           </article>
@@ -2410,7 +2548,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>Añadir al carrito</span>
+                <span>Añadir</span>
               </button>
             </div>
           </article>
@@ -2444,7 +2582,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>Añadir al carrito</span>
+                <span>Añadir</span>
               </button>
             </div>
           </article>
@@ -2478,7 +2616,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>Añadir al carrito</span>
+                <span>Añadir</span>
               </button>
             </div>
           </article>
@@ -2511,7 +2649,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>Añadir al carrito</span>
+                <span>Añadir</span>
               </button>
             </div>
           </article>
@@ -2545,7 +2683,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>Añadir al carrito</span>
+                <span>Añadir</span>
               </button>
             </div>
           </article>
@@ -2578,7 +2716,7 @@
                   <path d="M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10Z" />
                   <path d="M10 13h4" />
                 </svg>
-                <span>Añadir al carrito</span>
+                <span>Añadir</span>
               </button>
             </div>
           </article>
@@ -3325,15 +3463,23 @@
 
         renderCart();
         openCart();
-
-        const label = addBtn.querySelector('span');
-        if (label) {
-          const original = label.textContent;
-          label.textContent = `${(localStorage.getItem('intiLang') || 'es') === 'es' ? 'Añadido' : 'Added'} ${qty}`;
-          window.setTimeout(() => {
-            label.textContent = original || ((localStorage.getItem('intiLang') || 'es') === 'es' ? 'Añadir al carrito' : 'Add to cart');
-          }, 1200);
-        }
+addBtn.classList.add('is-added');
+card.classList.add('cart-pulse');
+const label = addBtn.querySelector('span');
+if (label) {
+  const original = label.textContent || ((localStorage.getItem('intiLang') || 'es') === 'es' ? 'Añadir' : 'Add');
+  label.textContent = `${(localStorage.getItem('intiLang') || 'es') === 'es' ? 'Añadido' : 'Added'} ✓`;
+  window.setTimeout(() => {
+    label.textContent = original;
+    addBtn.classList.remove('is-added');
+    card.classList.remove('cart-pulse');
+  }, 1050);
+} else {
+  window.setTimeout(() => {
+    addBtn.classList.remove('is-added');
+    card.classList.remove('cart-pulse');
+  }, 1050);
+}
       }
     });
 
@@ -3455,39 +3601,11 @@
       });
     });
 
-    function buildQuoteText(card) {
-      const lang = localStorage.getItem('intiLang') || 'es';
-      const control = card.querySelector('.product-actions');
-      const qty = Math.max(1, Number(control?.querySelector('.qty-value')?.textContent || '1') || 1);
-      const packSelect = control?.querySelector('.pack-select');
-      const name = card.dataset.productName || card.querySelector('h3')?.textContent?.trim() || 'Product';
-      const pack = (packSelect && packSelect.value) ? packSelect.value : (card.dataset.productPack || card.querySelector('.product-pack')?.textContent?.trim() || '');
-      return lang === 'es'
-        ? `Hola, quiero cotizar este producto:\n- Producto: ${name}\n- Presentación: ${pack}\n- Cantidad: ${qty}`
-        : `Hello, I would like to quote this product:\n- Product: ${name}\n- Presentation: ${pack}\n- Quantity: ${qty}`;
-    }
-
-    document.querySelectorAll('.product-card').forEach(card => {
-      const actions = card.querySelector('.product-actions');
-      if (!actions || actions.querySelector('.quick-quote-btn')) return;
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'quick-quote-btn';
-      button.textContent = (localStorage.getItem('intiLang') || 'es') === 'es' ? 'Cotizar por WhatsApp' : 'Quote on WhatsApp';
-      button.addEventListener('click', () => {
-        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(buildQuoteText(card))}`, '_blank');
-      });
-      actions.appendChild(button);
-    });
-
     const previousSetLang = setLang;
     setLang = function(lang) {
       previousSetLang(lang);
       const search = document.getElementById('productSearch');
       if (search) search.placeholder = lang === 'es' ? 'Buscar productos' : 'Search products';
-      document.querySelectorAll('.quick-quote-btn').forEach(btn => {
-        btn.textContent = lang === 'es' ? 'Cotizar por WhatsApp' : 'Quote on WhatsApp';
-      });
       const filterLabels = {
         es: ['Todo', 'Chocho', 'Snacks', 'Desayuno', 'Frutas'],
         en: ['All', 'Chocho', 'Snacks', 'Breakfast', 'Fruits']
@@ -3522,6 +3640,31 @@
     box.innerHTML=rows.map(([label,value])=>`<div class="product-detail-row"><span class="detail-label">${label}</span><strong>${value}</strong></div>`).join('');
     meta.insertAdjacentElement('afterend',box);
   });
+})();
+</script>
+
+<script>
+(function () {
+  function syncCompactCartLabels() {
+    const lang = localStorage.getItem('intiLang') || document.documentElement.lang || 'es';
+    document.querySelectorAll('#productos .add-cart-btn span').forEach((label) => {
+      if (!label.closest('.add-cart-btn')?.classList.contains('is-added')) {
+        label.textContent = lang === 'en' ? 'Add' : 'Añadir';
+      }
+    });
+  }
+
+  const previousSetLangFinal = window.setLang;
+  if (typeof previousSetLangFinal === 'function' && !window.__intiCompactCartLabelsPatched) {
+    window.setLang = function (lang) {
+      previousSetLangFinal(lang);
+      syncCompactCartLabels();
+    };
+    window.__intiCompactCartLabelsPatched = true;
+  }
+
+  document.addEventListener('DOMContentLoaded', syncCompactCartLabels);
+  syncCompactCartLabels();
 })();
 </script>
 
