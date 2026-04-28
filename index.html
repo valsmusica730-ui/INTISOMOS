@@ -1956,6 +1956,223 @@
       }
     }
 
+
+    /* =========================================================
+       ECOMMERCE REAL UPGRADE - INTI SOMOS
+       Mantiene colores/tipografia originales y mejora conversion
+    ========================================================= */
+    .shop-toolbar {display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px;border-radius:24px;background:rgba(255,255,255,0.72);border:1px solid rgba(13,35,69,0.08);box-shadow:0 14px 34px rgba(13,35,69,0.07);margin-bottom:30px;}
+    .shop-search {flex:1 1 280px;min-height:52px;border:1px solid rgba(13,35,69,0.10);border-radius:999px;background:#fff;color:var(--navy);padding:0 20px;outline:none;box-shadow:0 8px 20px rgba(13,35,69,0.04);}
+    .shop-search:focus {border-color:rgba(200,155,92,0.7);box-shadow:0 0 0 4px rgba(200,155,92,0.12);}
+    .shop-filters {display:flex;gap:10px;flex-wrap:wrap;}
+    .shop-filter {min-height:46px;border:1px solid rgba(13,35,69,0.10);border-radius:999px;padding:0 16px;background:rgba(255,255,255,0.92);color:var(--navy);cursor:pointer;font-weight:800;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;transition:all 0.25s ease;}
+    .shop-filter:hover,.shop-filter.active {background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;border-color:transparent;transform:translateY(-1px);}
+    .products-grid {grid-template-columns:repeat(auto-fit,minmax(280px,1fr)) !important;gap:30px !important;align-items:stretch;}
+    .product-card {position:relative;overflow:hidden;padding:0 !important;border-radius:30px !important;background:rgba(255,255,255,0.82) !important;border:1px solid rgba(13,35,69,0.08) !important;box-shadow:0 20px 48px rgba(13,35,69,0.10) !important;transition:transform 0.3s ease,box-shadow 0.3s ease;isolation:isolate;}
+    .product-card:hover {transform:translateY(-8px);box-shadow:0 30px 70px rgba(13,35,69,0.16) !important;}
+    .product-media {aspect-ratio:1/1 !important;border-radius:0 !important;overflow:hidden;background:linear-gradient(180deg,rgba(13,35,69,0.04),rgba(13,35,69,0.12));}
+    .product-media::after {background:linear-gradient(180deg,rgba(13,35,69,0) 38%,rgba(13,35,69,0.50) 100%) !important;}
+    .product-media img {width:100%;height:100%;object-fit:cover;transform:scale(1.01);}
+    .product-card:hover .product-media img {transform:scale(1.07);}
+    .product-card > .pill {position:absolute;top:16px;left:16px;z-index:3;margin:0;background:rgba(255,255,255,0.90);backdrop-filter:blur(10px);color:var(--navy);border-color:rgba(255,255,255,0.45);box-shadow:0 10px 24px rgba(13,35,69,0.10);}
+    .product-topline {position:absolute;left:16px;right:16px;bottom:150px;z-index:3;display:grid;gap:6px;padding:18px 18px 16px;border-radius:22px 22px 0 0;background:rgba(255,255,255,0.92);backdrop-filter:blur(14px);box-shadow:0 -10px 26px rgba(13,35,69,0.08);}
+    .product-topline h3 {font-family:'Inter',sans-serif !important;font-size:1.08rem !important;line-height:1.12 !important;letter-spacing:-0.02em;color:var(--navy);margin:0;}
+    .product-pack {font-size:0.62rem !important;letter-spacing:0.14em;color:rgba(36,48,65,0.60) !important;}
+    .product-price {position:absolute;right:16px;bottom:16px;font-family:'Inter',sans-serif !important;font-size:0.84rem !important;font-weight:900;color:var(--gold) !important;text-transform:uppercase;letter-spacing:0.12em;}
+    .product-card > p {position:absolute;left:34px;right:34px;bottom:104px;z-index:4;margin:0 !important;min-height:0 !important;color:rgba(36,48,65,0.72) !important;font-size:0.82rem !important;line-height:1.35 !important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+    .product-meta {display:none !important;}
+    .product-actions {position:relative;z-index:5;margin:-96px 16px 16px !important;padding:84px 18px 18px !important;border:0 !important;border-radius:0 0 22px 22px;background:rgba(255,255,255,0.92);backdrop-filter:blur(14px);display:grid !important;grid-template-columns:1fr 1fr !important;gap:10px !important;}
+    .product-actions .pack-select {grid-column:1/-1;min-height:48px !important;height:48px !important;border-radius:999px !important;background:#fff;font-size:0.78rem;}
+    .product-actions .qty-control {height:48px !important;min-height:48px !important;border-radius:999px !important;box-shadow:none;}
+    .product-actions .add-cart-btn {height:48px !important;min-height:48px !important;border-radius:999px !important;background:linear-gradient(135deg,var(--navy),var(--navy-2)) !important;color:#fff !important;box-shadow:0 12px 28px rgba(13,35,69,0.18) !important;font-size:0.66rem !important;letter-spacing:0.10em !important;padding:0 12px !important;}
+    .quick-quote-btn {grid-column:1/-1;min-height:46px;border:1px solid rgba(200,155,92,0.55);border-radius:999px;background:rgba(200,155,92,0.10);color:var(--navy);cursor:pointer;font-weight:900;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;transition:all 0.25s ease;}
+    .quick-quote-btn:hover {background:linear-gradient(135deg,#d1b078,#c89b5c);transform:translateY(-1px);}
+    .product-card.is-hidden {display:none !important;}
+    .cart-checkout {background:linear-gradient(135deg,#25D366,#128C7E) !important;color:#fff !important;}
+    #equipo {padding:86px 0;}
+    #equipo .section-head {margin-bottom:26px;}
+    #equipo .section-head h2 {font-size:clamp(2.6rem,4vw,4rem);}
+    #equipo .section-head p {max-width:520px;font-size:0.95rem;}
+    .team-grid {grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:18px !important;}
+    .team-card {display:flex;align-items:center;gap:14px;padding:14px 16px !important;border-radius:20px !important;background:rgba(255,255,255,0.78) !important;border:1px solid rgba(13,35,69,0.08);box-shadow:0 12px 26px rgba(13,35,69,0.06) !important;}
+    .team-card:hover {transform:translateY(-4px);box-shadow:0 18px 34px rgba(13,35,69,0.10) !important;}
+    .team-photo {width:68px !important;height:68px !important;aspect-ratio:auto !important;border-radius:999px !important;flex:0 0 68px;background:rgba(13,35,69,0.06);}
+    .team-photo img {border-radius:inherit;}
+    .team-info {padding:0 !important;min-width:0;}
+    .team-info h3 {font-family:'Inter',sans-serif !important;font-size:0.98rem !important;line-height:1.15;margin:0 0 4px !important;white-space:normal;}
+    .team-role {font-size:0.62rem !important;line-height:1.35;letter-spacing:0.12em !important;margin:0 !important;}
+    .team-info p {display:none !important;}
+    @media (max-width:900px){.shop-toolbar{align-items:stretch}.shop-filters,.shop-search{width:100%}.team-grid{grid-template-columns:1fr !important}}
+    @media (max-width:640px){.products-grid{grid-template-columns:1fr !important}.product-topline{bottom:144px}.product-card>p{bottom:100px}.product-actions,.product-actions:has(.pack-select){grid-template-columns:1fr !important}.quick-quote-btn,.product-actions .pack-select,.product-actions .qty-control,.product-actions .add-cart-btn{grid-column:1/-1 !important}}
+
+  
+    /* PRODUCT CARDS MAS COMPLETAS Y PREMIUM */
+    .products-grid{grid-template-columns:repeat(auto-fit,minmax(310px,1fr))!important;gap:32px!important;align-items:stretch!important}
+    .product-card{display:flex!important;flex-direction:column!important;overflow:hidden!important;padding:0!important;border-radius:30px!important;background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(250,247,241,.94))!important;border:1px solid rgba(13,35,69,.09)!important;box-shadow:0 22px 54px rgba(13,35,69,.10)!important;transition:transform .28s ease,box-shadow .28s ease!important;position:relative!important;isolation:isolate!important}
+    .product-card:hover{transform:translateY(-7px)!important;box-shadow:0 32px 74px rgba(13,35,69,.15)!important}
+    .product-media{aspect-ratio:1/.82!important;border-radius:0!important;overflow:hidden!important;background:linear-gradient(180deg,rgba(13,35,69,.04),rgba(13,35,69,.10))!important}
+    .product-media::after{background:linear-gradient(180deg,rgba(13,35,69,.02),rgba(13,35,69,.08))!important}
+    .product-media img{width:100%!important;height:100%!important;object-fit:cover!important;transition:transform .45s ease!important}.product-card:hover .product-media img{transform:scale(1.045)!important}
+    .product-card>.pill{position:absolute!important;top:16px!important;left:16px!important;z-index:3!important;margin:0!important;background:rgba(255,255,255,.92)!important;backdrop-filter:blur(10px)!important;color:var(--navy)!important;border-color:rgba(255,255,255,.52)!important;box-shadow:0 10px 24px rgba(13,35,69,.10)!important}
+    .product-topline{position:static!important;display:grid!important;grid-template-columns:1fr auto!important;gap:14px!important;align-items:start!important;padding:22px 22px 8px!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important;border-radius:0!important;z-index:auto!important}
+    .product-topline h3{font-family:'Cormorant Garamond',serif!important;font-size:clamp(1.75rem,2.3vw,2.28rem)!important;line-height:.96!important;letter-spacing:-.025em!important;color:var(--navy)!important;margin:0!important}.product-pack{display:inline-block!important;margin-top:9px!important;font-size:.66rem!important;letter-spacing:.15em!important;color:rgba(36,48,65,.58)!important;text-transform:uppercase!important}
+    .product-price{position:static!important;min-width:78px!important;padding:9px 11px!important;border-radius:999px!important;background:rgba(200,155,92,.13)!important;border:1px solid rgba(200,155,92,.30)!important;font-family:'Inter',sans-serif!important;font-size:.68rem!important;font-weight:900!important;color:var(--navy)!important;text-align:center!important;text-transform:uppercase!important;letter-spacing:.12em!important;line-height:1!important}
+    .product-card>p{position:static!important;margin:0!important;padding:0 22px 14px!important;min-height:0!important;color:rgba(36,48,65,.72)!important;font-size:.94rem!important;line-height:1.55!important;display:block!important;overflow:visible!important;-webkit-line-clamp:unset!important;-webkit-box-orient:unset!important}
+    .product-meta{display:flex!important;flex-wrap:wrap!important;gap:8px!important;min-height:0!important;padding:0 22px 14px!important}.product-meta span{padding:7px 10px!important;border-radius:999px!important;background:rgba(13,35,69,.045)!important;border:1px solid rgba(13,35,69,.07)!important;color:rgba(36,48,65,.72)!important;font-size:.68rem!important;font-weight:700!important}
+    .product-detail-list{display:grid!important;gap:8px!important;margin:0 22px 18px!important;padding:14px!important;border-radius:18px!important;background:rgba(248,244,236,.80)!important;border:1px solid rgba(13,35,69,.07)!important}.product-detail-row{display:flex!important;justify-content:space-between!important;gap:16px!important;align-items:baseline!important;padding-bottom:8px!important;border-bottom:1px solid rgba(13,35,69,.07)!important}.product-detail-row:last-child{padding-bottom:0!important;border-bottom:0!important}.detail-label{color:var(--gold)!important;text-transform:uppercase!important;letter-spacing:.14em!important;font-size:.62rem!important;font-weight:900!important;white-space:nowrap!important}.product-detail-row strong{color:var(--navy)!important;font-size:.82rem!important;line-height:1.3!important;text-align:right!important}
+    .product-actions{position:static!important;z-index:auto!important;margin:auto 22px 22px!important;padding:16px 0 0!important;border-top:1px solid rgba(13,35,69,.08)!important;border-radius:0!important;background:transparent!important;backdrop-filter:none!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:10px!important}.product-actions .pack-select{grid-column:1/-1!important;min-height:48px!important;height:48px!important;border-radius:16px!important;background:#fff!important;font-size:.82rem!important;box-shadow:0 8px 18px rgba(13,35,69,.04)!important}.product-actions .qty-control,.product-actions .add-cart-btn,.quick-quote-btn{min-height:50px!important;height:50px!important;border-radius:16px!important}.product-actions .add-cart-btn{background:linear-gradient(135deg,var(--navy),var(--navy-2))!important;color:#fff!important;box-shadow:0 12px 28px rgba(13,35,69,.18)!important;font-size:.66rem!important;letter-spacing:.09em!important;padding:0 12px!important;white-space:normal!important}.quick-quote-btn{grid-column:1/-1!important;border:1px solid rgba(200,155,92,.52)!important;background:rgba(200,155,92,.12)!important;color:var(--navy)!important;font-weight:900!important;letter-spacing:.12em!important;text-transform:uppercase!important}.quick-quote-btn:hover{background:linear-gradient(135deg,#d1b078,#c89b5c)!important;transform:translateY(-1px)!important}
+    @media(max-width:640px){.products-grid{grid-template-columns:1fr!important}.product-topline{grid-template-columns:1fr!important}.product-price{width:fit-content!important}.product-actions,.product-actions:has(.pack-select){grid-template-columns:1fr!important}.quick-quote-btn,.product-actions .pack-select,.product-actions .qty-control,.product-actions .add-cart-btn{grid-column:1/-1!important}}
+
+  
+
+    /* TEAM FINAL BALANCEADO PREMIUM - ni grande ni pequeno */
+    #equipo {
+      padding: 72px 0 78px !important;
+      background: linear-gradient(180deg, rgba(248,244,236,0), rgba(255,255,255,0.22));
+    }
+
+    #equipo .section-head {
+      margin-bottom: 28px !important;
+      align-items: center !important;
+    }
+
+    #equipo .section-head h2 {
+      font-size: clamp(2.4rem, 4vw, 3.8rem) !important;
+      letter-spacing: -0.02em;
+    }
+
+    #equipo .section-head p {
+      max-width: 480px !important;
+      font-size: 0.94rem !important;
+      line-height: 1.55 !important;
+      color: rgba(36,48,65,0.68) !important;
+    }
+
+    #equipo .team-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 20px !important;
+      align-items: stretch !important;
+    }
+
+    #equipo .team-card {
+      display: flex !important;
+      align-items: center !important;
+      gap: 16px !important;
+      min-height: 104px !important;
+      padding: 18px 20px !important;
+      border-radius: 24px !important;
+      background: rgba(255,255,255,0.86) !important;
+      border: 1px solid rgba(13,35,69,0.08) !important;
+      box-shadow: 0 16px 34px rgba(13,35,69,0.07) !important;
+      overflow: hidden !important;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+    }
+
+    #equipo .team-card:hover {
+      transform: translateY(-4px) !important;
+      box-shadow: 0 22px 46px rgba(13,35,69,0.11) !important;
+      border-color: rgba(200,155,92,0.28) !important;
+    }
+
+    #equipo .team-photo {
+      position: relative !important;
+      width: 76px !important;
+      height: 76px !important;
+      flex: 0 0 76px !important;
+      aspect-ratio: auto !important;
+      border-radius: 22px !important;
+      overflow: hidden !important;
+      background: linear-gradient(135deg, rgba(13,35,69,0.08), rgba(200,155,92,0.18)) !important;
+      border: 1px solid rgba(13,35,69,0.08) !important;
+    }
+
+    #equipo .team-photo img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      border-radius: inherit !important;
+      display: block;
+    }
+
+    #equipo .team-initial {
+      display: none;
+      width: 100%;
+      height: 100%;
+      place-items: center;
+      font-weight: 800;
+      color: var(--navy);
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
+    }
+
+    #equipo .team-info {
+      padding: 0 !important;
+      min-width: 0 !important;
+    }
+
+    #equipo .team-info h3 {
+      font-family: 'Inter', sans-serif !important;
+      font-size: 1.08rem !important;
+      line-height: 1.15 !important;
+      margin: 0 0 7px !important;
+      color: var(--navy) !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.02em !important;
+    }
+
+    #equipo .team-role {
+      display: inline-flex !important;
+      width: fit-content !important;
+      padding: 5px 9px !important;
+      border-radius: 999px !important;
+      background: rgba(200,155,92,0.12) !important;
+      color: var(--gold) !important;
+      font-size: 0.64rem !important;
+      line-height: 1 !important;
+      letter-spacing: 0.14em !important;
+      text-transform: uppercase !important;
+      font-weight: 900 !important;
+      margin: 0 !important;
+    }
+
+    #equipo .team-info p {
+      display: none !important;
+    }
+
+    @media (max-width: 980px) {
+      #equipo .team-grid {
+        grid-template-columns: 1fr !important;
+      }
+      #equipo .team-card {
+        max-width: 560px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      #equipo {
+        padding: 58px 0 64px !important;
+      }
+      #equipo .section-head {
+        align-items: flex-start !important;
+      }
+      #equipo .team-card {
+        min-height: 92px !important;
+        padding: 14px 16px !important;
+        border-radius: 20px !important;
+      }
+      #equipo .team-photo {
+        width: 64px !important;
+        height: 64px !important;
+        flex-basis: 64px !important;
+        border-radius: 18px !important;
+      }
+      #equipo .team-info h3 {
+        font-size: 1rem !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -2118,8 +2335,19 @@
           </div>
         </div>
 
+        <div class="shop-toolbar reveal" aria-label="Product tools">
+          <input class="shop-search" id="productSearch" type="search" placeholder="Buscar productos" aria-label="Buscar productos">
+          <div class="shop-filters" aria-label="Product categories">
+            <button class="shop-filter active" type="button" data-filter="all">Todo</button>
+            <button class="shop-filter" type="button" data-filter="chocho">Chocho</button>
+            <button class="shop-filter" type="button" data-filter="snack">Snacks</button>
+            <button class="shop-filter" type="button" data-filter="breakfast">Desayuno</button>
+            <button class="shop-filter" type="button" data-filter="fruit">Frutas</button>
+          </div>
+        </div>
+
         <div class="products-grid">
-          <article class="card product-card reveal" data-product-name="Freeze Dried Chochos" data-product-price="0" data-product-pack="FREEZE-DRIED · PLANT PROTEIN" data-product-image="images/product-chochos.jpg" data-watermark="images/product-chochos.jpg">
+          <article class="card product-card reveal" data-category="chocho snack" data-product-name="Freeze Dried Chochos" data-product-price="0" data-product-pack="FREEZE-DRIED · PLANT PROTEIN" data-product-image="images/product-chochos.jpg" data-watermark="images/product-chochos.jpg">
             <div class="product-media"><img src="images/product-chochos.jpg" alt="Freeze dried chochos"></div>
             <div class="pill" data-i18n="p1Pill">Plant-based protein</div>
             <div class="product-topline">
@@ -2153,7 +2381,7 @@
           </article>
 
 
-          <article class="card product-card reveal" data-product-name="Chocho Puffs" data-product-price="0" data-product-pack="READY TO EAT · 8G PROTEIN" data-product-image="images/product-chocho-puffs.jpg" data-watermark="images/product-chocho-puffs.jpg">
+          <article class="card product-card reveal" data-category="chocho snack" data-product-name="Chocho Puffs" data-product-price="0" data-product-pack="READY TO EAT · 8G PROTEIN" data-product-image="images/product-chocho-puffs.jpg" data-watermark="images/product-chocho-puffs.jpg">
             <div class="product-media"><img src="images/product-chocho-puffs.jpg" alt="Chocho puffs"></div>
             <div class="pill">High protein snack</div>
             <div class="product-topline">
@@ -2187,7 +2415,7 @@
             </div>
           </article>
 
-          <article class="card product-card reveal" data-product-name="Freeze Dried Fruits" data-product-price="0" data-product-pack="10G–20G / 1KG–2KG BULK" data-product-image="images/product-fruit.jpg" data-watermark="images/product-fruit.jpg">
+          <article class="card product-card reveal" data-category="fruit snack" data-product-name="Freeze Dried Fruits" data-product-price="0" data-product-pack="10G–20G / 1KG–2KG BULK" data-product-image="images/product-fruit.jpg" data-watermark="images/product-fruit.jpg">
             <div class="product-media"><img src="images/product-fruit.jpg" alt="Freeze dried fruits"></div>
             <div class="pill" data-i18n="p2Pill">Natural fruit</div>
             <div class="product-topline">
@@ -2221,7 +2449,7 @@
             </div>
           </article>
 
-          <article class="card product-card reveal" data-product-name="Quinoa Cereal" data-product-price="0" data-product-pack="30G / 255G" data-product-image="images/product-cereal.jpg" data-watermark="images/product-cereal.jpg">
+          <article class="card product-card reveal" data-category="breakfast snack" data-product-name="Quinoa Cereal" data-product-price="0" data-product-pack="30G / 255G" data-product-image="images/product-cereal.jpg" data-watermark="images/product-cereal.jpg">
             <div class="product-media"><img src="images/product-cereal.jpg" alt="Quinoa cereal"></div>
             <div class="pill" data-i18n="p3Pill">Andean cereals</div>
             <div class="product-topline">
@@ -2255,7 +2483,7 @@
             </div>
           </article>
 
-          <article class="card product-card reveal" data-product-name="Chocolate Covered Chochos" data-product-price="0" data-product-pack="PREMIUM SNACK · READY TO EAT" data-product-image="images/product-choco-chochos.jpg" data-watermark="images/product-choco-chochos.jpg">
+          <article class="card product-card reveal" data-category="chocho snack" data-product-name="Chocolate Covered Chochos" data-product-price="0" data-product-pack="PREMIUM SNACK · READY TO EAT" data-product-image="images/product-choco-chochos.jpg" data-watermark="images/product-choco-chochos.jpg">
             <div class="product-media"><img src="images/product-choco-chochos.jpg" alt="Chocolate covered chochos"></div>
             <div class="pill">Premium snack</div>
             <div class="product-topline">
@@ -2288,7 +2516,7 @@
             </div>
           </article>
 
-          <article class="card product-card reveal" data-product-name="Chocho Snack with Chili" data-product-price="0" data-product-pack="JARS · 250G OR 530G" data-product-image="images/product-chili-chochos.jpg" data-watermark="images/product-chili-chochos.jpg">
+          <article class="card product-card reveal" data-category="chocho snack" data-product-name="Chocho Snack with Chili" data-product-price="0" data-product-pack="JARS · 250G OR 530G" data-product-image="images/product-chili-chochos.jpg" data-watermark="images/product-chili-chochos.jpg">
             <div class="product-media"><img src="images/product-chili-chochos.jpg" alt="Chocho snack with chili"></div>
             <div class="pill">Gourmet ready to eat</div>
             <div class="product-topline">
@@ -2322,7 +2550,7 @@
             </div>
           </article>
 
-          <article class="card product-card reveal" data-product-name="Pancake Mix" data-product-price="0" data-product-pack="BREAKFAST MIX" data-product-image="images/product-pancake.jpg" data-watermark="images/product-pancake.jpg">
+          <article class="card product-card reveal" data-category="breakfast chocho" data-product-name="Pancake Mix" data-product-price="0" data-product-pack="BREAKFAST MIX" data-product-image="images/product-pancake.jpg" data-watermark="images/product-pancake.jpg">
             <div class="product-media"><img src="images/product-pancake.jpg" alt="Pancake mix"></div>
             <div class="pill">Breakfast mix</div>
             <div class="product-topline">
@@ -2363,44 +2591,44 @@
         <div class="section-head reveal">
           <div>
             <div class="eyebrow">Leadership team</div>
-            <h2>Leadership team</h2>
+            <h2>Leadership</h2>
           </div>
           <p>
-            A team focused on product development, operations and international expansion, with a clear vision: bringing Ecuadorian chocho to new markets.
+            A focused team leading brand growth, operations and international market development.
           </p>
         </div>
 
         <div class="team-grid">
           <article class="card team-card reveal">
             <div class="team-photo">
-              <img src="images/fernanda.jpg" alt="Fernanda London, CEO">
+              <img src="images/fernanda.jpg" alt="Fernanda London" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+              <span class="team-initial">FL</span>
             </div>
             <div class="team-info">
               <h3>Fernanda London</h3>
-              <div class="team-role">Founder & Chief Executive Officer (CEO)</div>
-              <p>Responsible for global direction and strategic growth, ensuring that our value proposition expands across borders through strong partnerships and efficient management.</p>
+              <div class="team-role">CEO</div>
             </div>
           </article>
 
           <article class="card team-card reveal">
             <div class="team-photo">
-              <img src="images/ximena.jpg" alt="Ximena Chungandro, Jefa de Operaciones">
+              <img src="images/ximena.jpg" alt="Ximena Chungandro" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+              <span class="team-initial">XC</span>
             </div>
             <div class="team-info">
               <h3>Ximena Chungandro</h3>
-              <div class="team-role">Global Operations Director</div>
-              <p>Strategic architect for standardizing processes and optimizing resources across multiple markets, supporting global expansion.</p>
+              <div class="team-role">Operations</div>
             </div>
           </article>
 
           <article class="card team-card reveal">
             <div class="team-photo">
-              <img src="images/camila.jpg" alt="Camila Ávila, Chief Developer Business">
+              <img src="images/camila.jpg" alt="Camila Ávila" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+              <span class="team-initial">CA</span>
             </div>
             <div class="team-info">
               <h3>Camila Ávila</h3>
-              <div class="team-role">Director of Global Operations & Brand Development</div>
-              <p>Designs and leads the integrated business architecture.</p>
+              <div class="team-role">Business Development</div>
             </div>
           </article>
         </div>
@@ -3192,6 +3420,110 @@
         }
       });
     });
+
+    /* =========================================================
+       ECOMMERCE REAL: buscador, filtros y cotizacion por WhatsApp
+    ========================================================= */
+    const productSearch = document.getElementById('productSearch');
+    const shopFilters = document.querySelectorAll('.shop-filter');
+    let activeProductFilter = 'all';
+
+    function normalizeText(value) {
+      return (value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function filterProducts() {
+      const term = normalizeText(productSearch?.value || '');
+      document.querySelectorAll('.product-card').forEach(card => {
+        const name = normalizeText(card.dataset.productName || card.querySelector('h3')?.textContent || '');
+        const text = normalizeText(card.textContent || '');
+        const category = normalizeText(card.dataset.category || '');
+        const matchesSearch = !term || name.includes(term) || text.includes(term);
+        const matchesFilter = activeProductFilter === 'all' || category.includes(activeProductFilter);
+        card.classList.toggle('is-hidden', !(matchesSearch && matchesFilter));
+      });
+    }
+
+    productSearch?.addEventListener('input', filterProducts);
+
+    shopFilters.forEach(button => {
+      button.addEventListener('click', () => {
+        shopFilters.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        activeProductFilter = button.dataset.filter || 'all';
+        filterProducts();
+      });
+    });
+
+    function buildQuoteText(card) {
+      const lang = localStorage.getItem('intiLang') || 'es';
+      const control = card.querySelector('.product-actions');
+      const qty = Math.max(1, Number(control?.querySelector('.qty-value')?.textContent || '1') || 1);
+      const packSelect = control?.querySelector('.pack-select');
+      const name = card.dataset.productName || card.querySelector('h3')?.textContent?.trim() || 'Product';
+      const pack = (packSelect && packSelect.value) ? packSelect.value : (card.dataset.productPack || card.querySelector('.product-pack')?.textContent?.trim() || '');
+      return lang === 'es'
+        ? `Hola, quiero cotizar este producto:\n- Producto: ${name}\n- Presentación: ${pack}\n- Cantidad: ${qty}`
+        : `Hello, I would like to quote this product:\n- Product: ${name}\n- Presentation: ${pack}\n- Quantity: ${qty}`;
+    }
+
+    document.querySelectorAll('.product-card').forEach(card => {
+      const actions = card.querySelector('.product-actions');
+      if (!actions || actions.querySelector('.quick-quote-btn')) return;
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'quick-quote-btn';
+      button.textContent = (localStorage.getItem('intiLang') || 'es') === 'es' ? 'Cotizar por WhatsApp' : 'Quote on WhatsApp';
+      button.addEventListener('click', () => {
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(buildQuoteText(card))}`, '_blank');
+      });
+      actions.appendChild(button);
+    });
+
+    const previousSetLang = setLang;
+    setLang = function(lang) {
+      previousSetLang(lang);
+      const search = document.getElementById('productSearch');
+      if (search) search.placeholder = lang === 'es' ? 'Buscar productos' : 'Search products';
+      document.querySelectorAll('.quick-quote-btn').forEach(btn => {
+        btn.textContent = lang === 'es' ? 'Cotizar por WhatsApp' : 'Quote on WhatsApp';
+      });
+      const filterLabels = {
+        es: ['Todo', 'Chocho', 'Snacks', 'Desayuno', 'Frutas'],
+        en: ['All', 'Chocho', 'Snacks', 'Breakfast', 'Fruits']
+      };
+      document.querySelectorAll('.shop-filter').forEach((btn, i) => {
+        btn.textContent = (filterLabels[lang] || filterLabels.es)[i] || btn.textContent;
+      });
+    };
+    setLang(localStorage.getItem('intiLang') || 'es');
+    filterProducts();
   </script>
+
+<script>
+(function(){
+  const details={
+    'Freeze Dried Chochos':[['Format','Freeze-dried'],['Use','Snack / ingredient'],['Highlights','High protein · Zero cholesterol']],
+    'Chocho Puffs':[['Format','Ready-to-eat'],['Serving','8g plant protein'],['Highlights','Crunchy · Gluten free']],
+    'Freeze Dried Fruits':[['Formats','10G / 20G / 1KG / 2KG / BULK'],['Use','Snacks · toppings'],['Shelf life','12–24 months']],
+    'Quinoa Cereal':[['Formats','30G / 255G'],['Use','Breakfast / snack'],['Highlights','Light · crunchy']],
+    'Chocolate Covered Chochos':[['Format','Ready-to-eat'],['Base','Freeze-dried chocho'],['Highlights','Chocolate coated']],
+    'Chocho Snack with Chili':[['Formats','Jars 250G / 530G'],['Use','Gourmet snack'],['Highlights','Spicy · ready-to-eat']],
+    'Pancake Mix':[['Format','Breakfast mix'],['Base','Quinoa + chocho'],['Highlights','Chocolate chips']]
+  };
+  document.querySelectorAll('.product-card').forEach(card=>{
+    if(card.querySelector('.product-detail-list')) return;
+    const name=card.dataset.productName || card.querySelector('h3')?.textContent?.trim();
+    const rows=details[name];
+    const meta=card.querySelector('.product-meta');
+    if(!rows || !meta) return;
+    const box=document.createElement('div');
+    box.className='product-detail-list';
+    box.innerHTML=rows.map(([label,value])=>`<div class="product-detail-row"><span class="detail-label">${label}</span><strong>${value}</strong></div>`).join('');
+    meta.insertAdjacentElement('afterend',box);
+  });
+})();
+</script>
+
 </body>
 </html>
